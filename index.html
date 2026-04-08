@@ -1251,6 +1251,65 @@
             color: #ffcc00;
             /* Color resaltado al hacer hover */
         }
+
+        /* Grid */
+.acuerdo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+/* Cards */
+.acuerdo-card {
+    padding: 15px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    font-size: 0.9em;
+    border-left: 4px solid;
+}
+
+.acuerdo-card strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Colores */
+.acuerdo-card.green {
+    border-color: #22c55e;
+    background: #eafaf0;
+}
+
+.acuerdo-card.blue {
+    border-color: #3b82f6;
+    background: #eef4ff;
+}
+
+.acuerdo-card.purple {
+    border-color: #a855f7;
+    background: #f5efff;
+}
+
+/* Caja final */
+.acuerdo-box {
+    background: #eef2f7;
+    border-left: 5px solid #001f3f;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.acuerdo-box h4 {
+    margin-bottom: 10px;
+    color: #001f3f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .acuerdo-grid {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 
@@ -1455,17 +1514,48 @@
                 </div>
 
                 <div class="subsection-header" onclick="toggleSubsection(this)">
-                    <h3>5.4 Acuerdo 286</h3><span class="chevron">▼</span>
-                </div>
-                <div class="subsection-content">
-                    <p>El Acuerdo 286 es una disposición oficial de la Secretaría de Educación Pública (SEP) que permite
-                        obtener un certificado o título con validez oficial, mediante la acreditación de conocimientos,
-                        habilidades y experiencia laboral, sin haber cursado de forma tradicional una carrera.</p>
-                    <p>Está dirigido a personas con experiencia comprobable en un área específica, quienes deben aprobar
-                        un proceso de evaluación para validar sus competencias.</p>
-                    <p>Este mecanismo reconoce el aprendizaje práctico y autodidacta, facilitando la profesionalización
-                        de las personas interesadas.</p>
-                </div>
+    <h3>5.4 Acuerdo 286</h3>
+    <span class="chevron">▼</span>
+</div>
+
+<div class="subsection-content">
+
+    <p>
+        El Acuerdo 286 de la SEP es una disposición legal fundamental que respalda la operación institucional de la Fundación Red Educativa México. 
+        Este acuerdo reconoce el derecho de las personas a certificar sus conocimientos, sin importar si estos fueron adquiridos de forma autodidacta o a través de la experiencia laboral.
+    </p>
+
+    <!-- Bloques -->
+    <div class="acuerdo-grid">
+
+        <div class="acuerdo-card green">
+            <strong>Publicación Original</strong>
+            <p>Emitido por la Secretaría de Educación Pública en el año 2000</p>
+        </div>
+
+        <div class="acuerdo-card blue">
+            <strong>Objetivo Jurídico</strong>
+            <p>Establecer normas y criterios para revalidación, equivalencia y acreditación de conocimientos</p>
+        </div>
+
+        <div class="acuerdo-card purple">
+            <strong>Validez Nacional</strong>
+            <p>Plena validez oficial en toda la República Mexicana</p>
+        </div>
+
+    </div>
+
+    <!-- Caja final -->
+    <div class="acuerdo-box">
+        <h4>Alcance y Beneficios</h4>
+        <p>
+            Los documentos (certificados o títulos) emitidos bajo este acuerdo tienen plena validez oficial en toda la República Mexicana,
+            permitiendo a los participantes continuar con estudios de posgrado o mejorar su perfil profesional de manera legal y reconocida.
+            Esto representa una oportunidad transformadora para personas que buscan profesionalizarse sin necesidad de asistir a aulas tradicionales.
+        </p>
+    </div>
+
+</div>
             </div>
         </div>
 
@@ -1595,119 +1685,131 @@
         </div>
 
         <!-- Valores de Programas Educativos (se mantiene exactamente igual) -->
-        <div class="subsection-header" onclick="toggleSubsection(this)">
-            <h3>Valores de Programas Educativos</h3>
-            <span class="chevron">▼</span>
+ <div class="subsection-header" onclick="toggleSubsection(this)">
+    <h3>Valores de Programas Educativos</h3>
+    <span class="chevron">▼</span>
+</div>
+
+<div class="subsection-content">
+
+    <!-- TITULACIÓN -->
+    <div class="program-card">
+        <div class="program-header blue">
+            <h4>TITULACIÓN POR EXPERIENCIA LABORAL</h4>
+            <span>ACUERDO 286</span>
         </div>
-        <div class="subsection-content">
-            <div class="program-card">
-                <div class="program-header blue">
-                    <h4>TITULACIÓN POR EXPERIENCIA LABORAL</h4>
-                    <span>ACUERDO 286</span>
-                </div>
-                <div class="program-body">
-                    <div class="program-item">
-                        <p>VALOR PÚBLICO EN GENERAL</p>
-                        <h3>$63,960.00</h3>
-                    </div>
-                    <div class="program-item">
-                        <p>VALOR CONVENIO EN PARCIALIDADES</p>
-                        <h3>$36,860.00</h3>
-                    </div>
-                    <div class="program-item highlight">
-                        <p>BECA 50% EN UNA EXHIBICIÓN</p>
-                        <h3>$31,980.00</h3>
-                    </div>
-                </div>
+        <div class="program-body">
+            <div class="program-item">
+                <p>VALOR A PÚBLICO EN GENERAL</p>
+                <h3>$63,960.00</h3>
             </div>
-
-            <div class="program-card">
-                <div class="program-header blue">
-                    <h4>BACHILLERATO GENERAL</h4>
-                    <span>ACUERDO 286</span>
-                </div>
-                <div class="program-body">
-                    <div class="program-item">
-                        <p>VALOR PÚBLICO EN GENERAL</p>
-                        <h3>$13,800.00</h3>
-                    </div>
-                    <div class="program-item">
-                        <p>VALOR CONVENIO EN PARCIALIDADES</p>
-                        <h3>$7,800.00</h3>
-                    </div>
-                    <div class="program-item highlight">
-                        <p>BECA 50% EN UNA EXHIBICIÓN</p>
-                        <h3>$6,900.00</h3>
-                    </div>
-                </div>
+            <div class="program-item">
+                <p>VALOR CONVENIO EN PARCIALIDADES</p>
+                <h3>$36,860.00</h3>
             </div>
-
-            <div class="program-card">
-                <div class="program-header gold">
-                    <h4>LICENCIATURAS EJECUTIVAS</h4>
-                    <span>PROGRAMAS FORMATIVOS</span>
-                </div>
-                <div class="program-body">
-                    <div class="program-item">
-                        <p>VALOR PÚBLICO EN GENERAL</p>
-                        <h3>$75,924.00</h3>
-                    </div>
-                    <div class="program-item highlight">
-                        <p>VALOR CONVENIO EN UNA EXHIBICIÓN</p>
-                        <h3>$29,970.00</h3>
-                    </div>
-                    <div class="program-item">
-                        <p>BECA 50% EN PARCIALIDADES</p>
-                        <h4>Inscripción: $999</h4>
-                        <h4>Reinscripción: $999</h4>
-                        <h4>Colegiatura: $999</h4>
-                        <h3>$37,962.00</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-header gold">
-                    <h4>BACHILLERATO INCLUSIVO</h4>
-                    <span>PROGRAMA EDUCATIVO</span>
-                </div>
-                <div class="program-body">
-                    <div class="program-item">
-                        <p>VALOR PÚBLICO EN GENERAL</p>
-                        <h3>$29,940.00</h3>
-                    </div>
-                    <div class="program-item">
-                        <p>VALOR CONVENIO</p>
-                        <h3>$11,976.00</h3>
-                    </div>
-                    <div class="program-item highlight">
-                        <p>BECA 50%</p>
-                        <h3>$14,970.00</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <div class="program-header blue">
-                    <h4>ENGLISH EDUCATION FOR LIFE</h4>
-                    <span>PROGRAMA DE IDIOMAS</span>
-                </div>
-                <div class="program-body">
-                    <div class="program-item">
-                        <p>VALOR PÚBLICO EN GENERAL</p>
-                        <h3>$20,000.00</h3>
-                    </div>
-                    <div class="program-item">
-                        <p>VALOR CONVENIO</p>
-                        <h3>$8,999.00</h3>
-                    </div>
-                    <div class="program-item highlight">
-                        <p>BECA</p>
-                        <h3>VARIABLE</h3>
-                    </div>
-                </div>
+            <div class="program-item highlight">
+                <p>BECA 50% EN UNA EXHIBICIÓN</p>
+                <h3>$31,980.00</h3>
             </div>
         </div>
+    </div>
+
+    <!-- BACHILLERATO GENERAL -->
+    <div class="program-card">
+        <div class="program-header blue">
+            <h4>BACHILLERATO GENERAL</h4>
+            <span>ACUERDO 286</span>
+        </div>
+        <div class="program-body">
+            <div class="program-item">
+                <p>VALOR A PÚBLICO EN GENERAL</p>
+                <h3>$13,800.00</h3>
+            </div>
+            <div class="program-item">
+                <p>VALOR CONVENIO EN PARCIALIDADES</p>
+                <h3>$7,800.00</h3>
+            </div>
+            <div class="program-item highlight">
+                <p>BECA 50% EN UNA EXHIBICIÓN</p>
+                <h3>$6,900.00</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- LICENCIATURAS -->
+    <div class="program-card">
+        <div class="program-header gold">
+            <h4>LICENCIATURAS EJECUTIVAS</h4>
+            <span>PROGRAMAS FORMATIVOS</span>
+        </div>
+        <div class="program-body">
+            <div class="program-item">
+                <p>VALOR A PÚBLICO EN GENERAL</p>
+                <h3>$75,924.00</h3>
+            </div>
+            <div class="program-item">
+                <p>VALOR CONVENIO EN UNA EXHIBICIÓN</p>
+                <h3>$29,970.00</h3>
+            </div>
+            <div class="program-item highlight">
+                <p>BECA 50% EN PARCIALIDADES</p>
+                <h4>INSCRIPCIÓN: $999</h4>
+                <h4>REINSCRIPCIÓN CUATRIMESTRAL: $999</h4>
+                <h4>COLEGIATURA MENSUAL: $999</h4>
+                <h3>$37,962.00</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- BACHILLERATO INCLUSIVO -->
+    <div class="program-card">
+        <div class="program-header gold">
+            <h4>BACHILLERATO INCLUYENTE</h4>
+            <span>PROGRAMAS FORMATIVOS</span>
+        </div>
+        <div class="program-body">
+            <div class="program-item">
+                <p>VALOR A PÚBLICO EN GENERAL</p>
+                <h3>$29,940.00</h3>
+            </div>
+            <div class="program-item">
+                <p>VALOR CONVENIO EN UNA EXHIBICIÓN</p>
+                <h3>$11,976.00</h3>
+            </div>
+            <div class="program-item highlight">
+                <p>BECA 50% EN PARCIALIDADES</p>
+                <h4>INSCRIPCIÓN: $499</h4>
+                <h4>REINSCRIPCIÓN CUATRIMESTRAL: $499</h4>
+                <h4>COLEGIATURA MENSUAL: $499</h4>
+                <h3>$14,970.00</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- INGLÉS -->
+    <div class="program-card">
+        <div class="program-header blue">
+            <h4>ENGLISH EDUCATION FOR LIFE</h4>
+            <span>PROGRAMA DE INGLÉS</span>
+        </div>
+        <div class="program-body">
+            <div class="program-item">
+                <p>VALOR A PÚBLICO EN GENERAL</p>
+                <h3>$20,000.00</h3>
+            </div>
+            <div class="program-item">
+                <p>EN UNA EXHIBICIÓN</p>
+                <h3>$8,999.00</h3>
+            </div>
+            <div class="program-item highlight">
+                <p>BECA 50% PAGO EN PARCIALIDADES</p>
+                <h4>INSCRIPCIÓN: $1,500</h4>
+                <h4>COLEGIATURA MENSUAL: $2,100</h4>
+            </div>
+        </div>
+    </div>
+
+</div>
     </div>
 </div>
 
