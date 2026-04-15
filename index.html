@@ -4,523 +4,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Manual de Capacitación Institucional</title>
+    <title>REDMEX · Manual de Capacitación</title>
+    <link rel="icon"
+        href="https://d2xsxph8kpxj0f.cloudfront.net/310519663514551788/kCthg2DGRm6NuVQAqaMAg5/pasted_file_iFHJ7y_Logofundación_Mesadetrabajo1copia2_fba7c4ae.png"
+        type="image/png">
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* ========== RESET & VARIABLES ========== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f8fafc;
-            color: #1a1a1a;
-            line-height: 1.6;
+            font-family: "Inter", sans-serif;
+            background: #f5f7fb;
+            color: #1e293b;
+            display: flex;
+            min-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            flex-direction: row;
         }
 
-        header {
-            background-color: #001f3f;
-            color: white;
-            padding: 40px 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-bottom: 4px solid #f5b042;
+        :root {
+            --deep-blue: #0f172a;
+            --accent-gold: #fbbf24;
+            --primary: #2563eb;
+            --sidebar-width: 300px;
         }
 
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* ========== SIDEBAR ========== */
+        .app-sidebar {
+            width: var(--sidebar-width);
+            max-width: 100%;
+            background: var(--deep-blue);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 32px 16px;
+            border-right: 1px solid #1e293b;
+            overflow-y: auto;
+            position: sticky;
+            top: 0;
         }
 
-        .logo-section {
+        .logo-area {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 8px;
+            padding: 0 8px 24px;
+            border-bottom: 1px solid #334155;
             flex-wrap: wrap;
         }
 
-        .logo-section img {
-            height: 180px;
-            object-fit: contain;
+        .logo-area img {
+            max-height: 80px;
+            max-width: 100%;
+            width: auto;
             filter: brightness(0) invert(1);
-        }
-
-        .logo-text {
-            background-color: white;
-            color: #001f3f;
-            font-weight: bold;
-            font-size: 1.8rem;
-            padding: 0.2rem 1.2rem;
-            border-radius: 8px;
-            letter-spacing: 1px;
-            font-family: 'Arial', sans-serif;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            object-fit: contain;
         }
 
         .logo-divider {
-            width: 2px;
-            height: 60px;
-            background-color: #ffd700;
+            width: 1px;
+            height: 30px;
+            background: #475569;
+            margin: 0 4px;
         }
 
-        .header-title {
-            text-align: center;
-            margin-bottom: 20px;
+        .logo-badge {
+            background: var(--accent-gold);
+            color: #0f172a;
+            padding: 4px 10px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 12px;
+            margin-left: auto;
         }
 
-        .header-title h1 {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin: 0;
+        .nav-menu {
+            flex: 1;
+            margin-top: 24px;
         }
 
-        .header-title p {
-            font-size: 1.1em;
-            color: #fff9e6;
-            margin: 0;
-        }
-
-        .hero {
-            position: relative;
-            height: 400px;
-            background: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&h=400&fit=crop') center/cover;
+        .nav-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 31, 63, 0.75);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            color: white;
-        }
-
-        .hero-content h2 {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .hero-content p {
-            font-size: 1.2em;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .toc {
-            background-color: #f0f4f8;
-            border-left: 4px solid #ffd700;
-            padding: 30px;
-            margin-bottom: 40px;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .toc h2 {
-            color: #001f3f;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            font-weight: 600;
-        }
-
-        .toc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 12px;
-        }
-
-        .toc-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 15px;
-            background-color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            color: #1a1a1a;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
+            gap: 14px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            color: #94a3b8;
+            font-weight: 500;
+            margin-bottom: 6px;
+            transition: all 0.2s;
             cursor: pointer;
+            list-style: none;
         }
 
-        .toc-link:hover {
-            background-color: #e9ecef;
-            border-color: #ffd700;
-            transform: translateX(4px);
+        .nav-item i {
+            width: 24px;
+            font-size: 1.3rem;
         }
 
-        .toc-number {
-            background-color: #ffd700;
-            color: #001f3f;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9em;
-            flex-shrink: 0;
+        .nav-item:hover {
+            background: #1e293b;
+            color: #f8fafc;
         }
 
-        .section {
-            margin-bottom: 30px;
-            scroll-margin-top: 80px;
-        }
-
-        .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 24px;
-            background-color: #001f3f;
+        .nav-item.active {
+            background: var(--primary);
             color: white;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px -6px #1e3a8a;
         }
 
-        .section-header:hover {
-            background-color: #003d7a;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        /* ========== PANEL PRINCIPAL ========== */
+        .main-panel {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 32px 40px;
+            background: #f8fafc;
         }
 
-        .section-header-title h2 {
-            font-size: 1.3em;
-            margin: 0;
-            font-weight: 600;
+        .metrics-group,
+        .drive-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .chevron {
-            transition: transform 0.3s ease;
-            font-size: 1.2em;
+        .drive-buttons button {
+            min-width: 180px;
         }
 
-        .chevron.open {
-            transform: rotate(180deg);
-        }
-
-        .section-content {
-            background-color: white;
-            border-left: 4px solid #ffd700;
-            padding: 24px;
-            margin-bottom: 20px;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .section-view {
             display: none;
-            animation: slideIn 0.3s ease;
         }
 
-        .section-content.open {
+        .section-view.active {
             display: block;
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
         }
 
-        .section-content p {
-            margin-bottom: 15px;
-            text-align: justify;
-            line-height: 1.8;
+        .dashboard-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
         }
 
-        .section-content h3 {
-            color: #001f3f;
-            margin-top: 20px;
-            margin-bottom: 12px;
-            font-size: 1.2em;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 8px;
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
         }
 
-        .section-content h4 {
-            color: #003d7a;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            font-size: 1.05em;
+        .module-card {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eef2f6;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.1);
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            background: #eef2ff;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* Contenido general */
+        .content-card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eef2f6;
+            margin-bottom: 24px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
         }
 
-        table th {
-            background-color: #001f3f;
+        th {
+            background: var(--deep-blue);
             color: white;
-            padding: 12px;
+            padding: 14px 16px;
             text-align: left;
-            font-weight: bold;
         }
 
-        table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-        }
-
-        table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
-
-        table tr:hover {
-            background-color: #e8f0ff;
-        }
-
-        ul,
-        ol {
-            margin: 15px 0 15px 30px;
-        }
-
-        li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        .card {
-            background-color: #f8fafc;
-            border-left: 4px solid #ffd700;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-
-        .card strong {
-            color: #001f3f;
-        }
-
-        footer {
-            background-color: #001f3f;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-            border-top: 4px solid #ffd700;
-        }
-
-        /* Responsive general */
-        @media (max-width: 768px) {
-            .header-title h1 {
-                font-size: 1.8em;
-            }
-
-            .hero-content h2 {
-                font-size: 1.8em;
-            }
-
-            .section-header-title h2 {
-                font-size: 1.1em;
-            }
-
-            .toc-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .logo-section img {
-                height: 60px;
-            }
-
-            .logo-text {
-                font-size: 1.2rem;
-                padding: 0.1rem 0.8rem;
-            }
-
-            .logo-divider {
-                height: 40px;
-            }
-
-            .identity-container {
-                flex-direction: column;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .evaluacion-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .seguimiento-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .metodologia-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .actividades-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .impacto-metricas {
-                flex-direction: column;
-                gap: 15px;
-            }
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #ecf1f7;
         }
 
         .subsection-header {
-            background-color: #ffd700;
-            color: #001f3f;
-            padding: 16px 20px;
-            border-radius: 6px;
+            background: #f1f5f9;
+            padding: 1rem 1.5rem;
+            border-radius: 40px;
+            margin-top: 20px;
             cursor: pointer;
-            margin-top: 15px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            transition: all 0.3s ease;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.2s;
         }
-
         .subsection-header:hover {
-            background-color: #e6c200;
-        }
-
-        .subsection-header h3 {
-            margin: 0;
-            font-size: 1.05em;
-            border: none;
-            padding: 0;
+            background: #e2e8f0;
         }
 
         .subsection-content {
-            display: none;
-            padding: 15px 20px;
-            background-color: #fafbfc;
-            border-left: 3px solid #ffd700;
-            margin-top: 5px;
-            border-radius: 0 4px 4px 0;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
         }
 
         .subsection-content.open {
-            display: block;
+            max-height: 3000px;
+            padding: 1.5rem;
         }
 
-        .program-card {
-            margin-bottom: 25px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        /* Estilos para la jerarquía de módulos */
+        .modulo-seccion {
+            margin-top: 1.8rem;
+            margin-bottom: 1.8rem;
         }
-
-        .program-header {
-            padding: 20px;
-            color: white;
-            display: flex;
-            flex-direction: column;
+        .modulo-seccion:first-of-type {
+            margin-top: 0;
         }
-
-        .program-header h4 {
-            margin: 0;
-            font-size: 1.1em;
+        .modulo-seccion h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--deep-blue);
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 12px;
+            margin-bottom: 0.75rem;
+        }
+        .modulo-seccion p, .modulo-seccion ul {
+            margin-left: 1rem;
+            color: #334155;
+            line-height: 1.5;
+        }
+        .modulo-seccion ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .modulo-seccion li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+        .modulo-seccion li::before {
+            content: "•";
+            color: var(--primary);
             font-weight: bold;
+            position: absolute;
+            left: 0.25rem;
+        }
+        .modulo-seccion strong {
+            color: #0f172a;
         }
 
-        .program-header span {
-            font-size: 0.9em;
-            opacity: 0.9;
+        /* Tabla de actividades dentro de módulos */
+        .actividades-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .actividades-tabla th {
+            background: var(--deep-blue);
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .actividades-tabla td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        .actividades-tabla tr:last-child td {
+            border-bottom: none;
         }
 
-        .program-header.blue {
-            background-color: #0a2a5e;
+        /* Imagen 16:9 en actividades */
+        .actividades-imagen {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
+        .actividades-imagen img {
+            max-width: 400px;      /* Controla el tamaño máximo */
+    width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
         }
 
-        .program-header.gold {
-            background-color: #c58b00;
-        }
-
-        .program-body {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            background: #f9fafc;
-        }
-
-        .program-item {
-            padding: 20px;
-            border-right: 1px solid #e5e7eb;
-        }
-
-        .program-item:last-child {
-            border-right: none;
-        }
-
-        .program-item p {
-            font-size: 0.8em;
-            color: #6b7280;
-            margin-bottom: 10px;
-        }
-
-        .program-item h3 {
-            font-size: 1.6em;
-            color: #0a2a5e;
-        }
-
-        .program-item h4 {
-            font-size: 0.9em;
-            margin: 3px 0;
-            color: #374151;
-        }
-
-        .program-item.highlight h3 {
-            color: #d4a017;
-        }
-
-        /* Estilos para el diagrama de procesos (mapeo) */
+        /* Mapeo (punto 8) - ÍNTEGRO */
         .mapeo-container {
             margin: 20px 0;
+            overflow-x: auto;
         }
 
         .mapeo-wrapper {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-        }
-
-        .mapeo-inner {
+            min-width: min(100%, 1000px);
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 24px;
         }
 
         .flow-row {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 10px;
         }
 
@@ -532,15 +365,14 @@
 
         .header {
             width: 100%;
-            padding: 10px 5px;
+            padding: 12px 5px;
             color: white;
             text-align: center;
             font-weight: bold;
-            font-size: 14px;
-            position: relative;
-            margin-bottom: 15px;
+            font-size: 13px;
             clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 5% 50%);
-            height: 60px;
+            margin-bottom: 15px;
+            height: 65px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -548,36 +380,23 @@
         }
 
         .h-blue {
-            background-color: #59a5c8;
+            background: #2c7da0;
         }
 
         .h-green {
-            background-color: #34a853;
+            background: #2d6a4f;
         }
 
         .h-navy {
-            background-color: #1d3a5f;
+            background: #1b3b5c;
         }
 
         .h-purple {
-            background-color: #8e44ad;
+            background: #6d597a;
         }
 
         .h-red {
-            background-color: #c0392b;
-        }
-
-        .responsable-label {
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .responsable-val {
-            font-size: 13px;
-            font-weight: 800;
-            margin-bottom: 15px;
-            text-align: center;
+            background: #b23b3b;
         }
 
         .bubble-list {
@@ -588,38 +407,31 @@
         }
 
         .bubble {
-            padding: 8px 12px;
-            border-radius: 10px;
+            padding: 10px 12px;
+            border-radius: 16px;
             font-size: 12px;
             font-weight: 600;
-            min-height: 35px;
-            display: flex;
-            align-items: center;
+            background: #f1f5f9;
         }
 
         .b-blue {
-            background-color: #d1e9f5;
-            border-left: 5px solid #59a5c8;
+            border-left: 6px solid #2c7da0;
         }
 
         .b-green {
-            background-color: #d4edda;
-            border-left: 5px solid #34a853;
+            border-left: 6px solid #2d6a4f;
         }
 
         .b-navy {
-            background-color: #d1d9e6;
-            border-left: 5px solid #1d3a5f;
+            border-left: 6px solid #1b3b5c;
         }
 
         .b-purple {
-            background-color: #ebdef0;
-            border-left: 5px solid #8e44ad;
+            border-left: 6px solid #6d597a;
         }
 
         .b-red {
-            background-color: #f2d7d5;
-            border-left: 5px solid #c0392b;
+            border-left: 6px solid #b23b3b;
         }
 
         .scope-row {
@@ -630,748 +442,471 @@
         }
 
         .table-container {
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            overflow: hidden;
             display: grid;
             grid-template-columns: 1fr 1.1fr;
-            font-size: 11px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: 12px;
         }
 
         .t-head {
-            color: white;
-            padding: 8px 2px;
-            text-align: center;
+            padding: 10px;
             font-weight: bold;
-        }
-
-        .t-body {
-            padding: 8px 5px;
-            background-color: #fdfdfd;
-            line-height: 1.3;
+            color: white;
         }
 
         .bg-blue {
-            background-color: #59a5c8;
+            background: #2c7da0;
         }
 
         .bg-green {
-            background-color: #34a853;
+            background: #2d6a4f;
         }
 
         .bg-navy {
-            background-color: #1d3a5f;
+            background: #1b3b5c;
         }
 
         .bg-purple {
-            background-color: #8e44ad;
+            background: #6d597a;
         }
 
         .bg-red {
-            background-color: #c0392b;
+            background: #b23b3b;
         }
 
         .bg-light-gray {
-            background-color: #b0b0b0;
+            background: #b0b0b0;
+            color: #222;
         }
 
-        @media (max-width: 768px) {
-
-            .flow-row,
-            .scope-row {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .header {
-                clip-path: none;
-                height: auto;
-            }
-        }
-
-        /* Estilos para habilidades (tabla comparativa) */
-        .skills-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        .skills-table th,
-        .skills-table td {
-            border: 1px solid #ddd;
+        .t-body {
             padding: 12px;
-            text-align: left;
-            vertical-align: top;
+            background: #fdfdfd;
         }
 
-        .skills-table th {
-            background-color: #001f3f;
-            color: white;
-        }
-
-        .skills-table td:first-child {
-            font-weight: bold;
-            background-color: #f0f4f8;
-        }
-
-        .check-yes {
-            color: #2e7d32;
-            font-weight: bold;
-        }
-
-        .check-no {
-            color: #c62828;
-            font-weight: bold;
-        }
-
-        /* Tarjetas de programa educativo */
-        .program-detalle {
-            background-color: #f9fafc;
-            border-radius: 10px;
-            padding: 20px;
+        /* Programas (valores) - ÍNTEGRO */
+        .program-card {
             margin-bottom: 25px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            border-left: 5px solid #ffd700;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            background: white;
         }
 
-        .program-detalle h4 {
-            color: #001f3f;
-            margin-top: 0;
-            font-size: 1.3em;
-        }
-
-        .program-detalle ul {
-            margin-top: 10px;
-        }
-
-        /* Imagen superior */
-        .actividades-hero {
-            width: 100%;
-            height: 260px;
-            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978') center/cover;
-            border-radius: 12px;
-            margin-bottom: 25px;
-        }
-
-        /* Grid */
-        .actividades-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        /* Cards */
-        .actividad-card {
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #d4a017;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s ease;
-        }
-
-        .actividad-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .actividad-card h3 {
-            color: #001f3f;
-            margin-bottom: 10px;
-        }
-
-        .actividad-card p {
-            font-size: 0.95em;
-            margin-bottom: 10px;
-        }
-
-        .actividad-card ul {
-            margin-left: 20px;
-        }
-
-        .actividad-card li {
-            font-size: 0.9em;
-            margin-bottom: 5px;
-        }
-
-        /* Impacto */
-        .impacto-box {
-            margin-top: 30px;
-            padding: 25px;
-            background: #f1f5f9;
-            border-radius: 12px;
-            border-left: 4px solid #001f3f;
-        }
-
-        .impacto-box h3 {
-            color: #001f3f;
-            margin-bottom: 10px;
-        }
-
-        .impacto-metricas {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .impacto-metricas h2 {
-            color: #001f3f;
-            font-size: 1.8em;
-        }
-
-        .impacto-metricas span {
-            font-size: 0.9em;
-            color: #6b7280;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: #eef2f7;
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        .skill-card h3 {
-            color: #001f3f;
-            margin-bottom: 10px;
-        }
-
-        .skill-card p {
-            font-size: 0.95em;
-            margin: 5px 0;
-        }
-
-        .bad {
-            color: #c62828;
-        }
-
-        .good {
-            color: #2e7d32;
-        }
-
-        .evaluacion-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 25px 0;
-        }
-
-        .eval-card {
-            background: #001f3f;
+        .program-header {
+            padding: 1.2rem 1.8rem;
             color: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 0.95em;
-            transition: all 0.2s ease;
-        }
-
-        .eval-card:hover {
-            transform: translateY(-3px);
-            background: #003d7a;
-        }
-
-        .resultado-box {
-            background: #e8f5e9;
-            border-left: 5px solid #2e7d32;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .resultado-box h3 {
-            color: #2e7d32;
-            margin-bottom: 10px;
-        }
-
-        .seguimiento-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .seguimiento-grid div {
-            background: #001f3f;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border-left: 4px solid #d4a017;
-            font-size: 0.95em;
-        }
-
-        .calendario-box {
-            margin-top: 20px;
-            background: #e5e7eb;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .calendario-box h3 {
-            margin-bottom: 15px;
-            color: #001f3f;
-        }
-
-        .anexos-lista {
-            margin-top: 20px;
-        }
-
-        .anexo-item {
-            background: #eef2f7;
-            padding: 15px 18px;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            border-left: 4px solid #d4a017;
-            transition: 0.2s;
-        }
-
-        .anexo-item:hover {
-            transform: translateX(4px);
-            background: #e3eaf3;
-        }
-
-        .anexo-item strong {
-            color: #001f3f;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .anexo-item p {
-            font-size: 0.9em;
-            margin: 0;
-        }
-
-        .anexo-item a {
-            color: #001f3f;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .anexo-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Imagen metodología */
-        .metodologia-img {
-            width: 100%;
-            height: 260px;
-            background: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655') center/cover;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .metodologia-texto {
-            margin-bottom: 20px;
-            text-align: justify;
-            font-size: 0.95em;
-        }
-
-        .metodologia-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-
-        .metodologia-item {
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
-            transition: 0.2s ease;
-        }
-
-        .metodologia-item:hover {
-            transform: translateY(-3px);
-            background: #e9eff6;
-        }
-
-        .metodologia-item h3 {
-            color: #001f3f;
-            font-size: 1em;
-            margin-bottom: 5px;
-        }
-
-        .metodologia-item p {
-            font-size: 0.85em;
-            color: #4b5563;
-        }
-
-        /* Estilos específicos para las tarjetas de identidad */
-        .identity-container {
             display: flex;
-            gap: 20px;
-            padding: 20px 0;
             flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
         }
 
-        .identity-card {
-            flex: 1;
-            min-width: 280px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid #d4af37;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
+        .program-header.blue {
+            background: #0a2540;
         }
 
-        .identity-card h3 {
-            color: #0d2c54;
-            font-size: 1.4rem;
-            margin-top: 0;
-            margin-bottom: 15px;
+        .program-header.gold {
+            background: #b8860b;
         }
 
-        .card-label {
-            font-weight: bold;
-            color: #333;
-            margin-top: 10px;
-            display: block;
+        .program-body {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            background: white;
         }
 
-        .card-text {
-            font-size: 0.95rem;
-            color: #555;
-            margin-bottom: 10px;
+        .program-item {
+            padding: 1.5rem;
+            border-right: 1px solid #eef2f6;
         }
 
-        .list-yes,
-        .list-no {
-            list-style: none;
-            padding-left: 0;
-            margin: 10px 0;
+        .program-item:last-child {
+            border-right: none;
         }
 
-        .list-yes li::before {
-            content: "•";
-            color: #0d2c54;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
+        .program-item h3 {
+            color: #0a2540;
+            font-size: 1.8rem;
+            margin: 10px 0 0;
         }
 
-        .list-no li::before {
-            content: "•";
-            color: #666;
-            display: inline-block;
-            width: 1em;
+        .program-item.highlight h3 {
+            color: #b8860b;
         }
 
-        .role-box {
-            background-color: #fcf6e5;
-            padding: 10px;
-            border-radius: 6px;
-            margin-top: auto;
-            font-size: 0.9rem;
-        }
-
+        /* Oferta educativa - tarjetas completas */
         .oferta-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            padding: 20px 0;
+            margin: 20px 0;
         }
 
         .edu-card {
-            background: #fff;
-            border-radius: 12px;
-            border: 1px solid #e0e0e0;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .edu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .edu-card-header {
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-
-        .edu-card-header h3 {
-            margin: 0;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-
-        .edu-card-content {
-            padding: 20px;
-            flex-grow: 1;
-            font-size: 0.95rem;
-        }
-
-        .edu-tag {
-            display: inline-block;
-            padding: 4px 10px;
+            background: white;
             border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            background: #f0f0f0;
-            color: #555;
+            overflow: hidden;
+            border: 1px solid #eef2f6;
         }
 
-        .edu-list {
-            margin: 15px 0;
-            padding-left: 20px;
-            color: #444;
+        .edu-header {
+            padding: 1.5rem;
+            background: var(--deep-blue);
+            color: white;
         }
 
-        .edu-list li {
-            margin-bottom: 5px;
+        .edu-body {
+            padding: 1.5rem;
         }
 
         .edu-footer {
-            padding: 15px 20px;
-            background: #f9f9f9;
-            border-top: 1px solid #eee;
-            font-size: 0.85rem;
-        }
-
-        .bg-blue {
-            background-color: #1d3a5f;
-        }
-
-        .columns-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px;
-            font-size: 0.8rem;
-            list-style: none;
-            padding: 0;
-        }
-
-        .eval-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .eval-box {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 15px;
-            border-top: 4px solid #1d3a5f;
-        }
-
-        .eval-box h4 {
-            margin-top: 0;
-            color: #1d3a5f;
+            background: #f9fbfe;
+            padding: 1rem 1.5rem;
+            border-top: 1px solid #eef2f6;
             font-size: 0.9rem;
-            text-transform: uppercase;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
         }
 
-        .eval-box ul {
-            padding-left: 18px;
-            margin-bottom: 0;
-            font-size: 0.85rem;
+        .edu-list {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .kpi-container {
-            background: #fff;
-            border: 1px dashed #1d3a5f;
-            border-radius: 8px;
-            padding: 15px;
-            margin-top: 20px;
+        .edu-list li {
+            padding: 4px 0 4px 24px;
+            position: relative;
         }
 
-        .kpi-grid {
+        .edu-list li::before {
+            content: "▹";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 4px;
+        }
+
+        /* Identidad */
+        .identity-container {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .identity-card {
+            flex: 1 1 260px;
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem;
+            border-top: 6px solid;
+        }
+
+        /* Actividades (NUEVA VERSIÓN DETALLADA) */
+        .actividades-grid-extendida {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 25px 0;
         }
 
-        .kpi-item {
-            font-size: 0.85rem;
+        .actividad-block {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .actividad-block h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--deep-blue);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .actividad-block ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .actividad-block li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .actividad-block li:last-child {
+            border-bottom: none;
+        }
+
+        .actividad-block li::before {
+            content: "▹";
+            color: var(--accent-gold);
+            font-weight: bold;
+            position: absolute;
+            left: 4px;
+        }
+
+        .grid-responsive-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .grid-responsive-3.compact {
+            gap: 12px;
+        }
+
+        .grid-responsive-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 1080px) {
+            .main-panel {
+                padding: 28px 24px;
+            }
+
+            .dashboard-header {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .content-card,
+            .edu-body,
+            .edu-footer,
+            .program-item,
+            .actividad-block {
+                padding: 24px;
+            }
+
+            .subsection-header {
+                padding: 0.9rem 1.2rem;
+            }
+
+            .subsection-content {
+                padding: 0 1.2rem;
+            }
+        }
+
+        @media (max-width: 860px) {
+            body {
+                flex-direction: column;
+            }
+
+            .app-sidebar {
+                width: 100%;
+                min-width: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #cbd5e1;
+                padding: 20px 16px;
+            }
+
+            .logo-area {
+                justify-content: center;
+            }
+
+            .logo-divider {
+                display: none;
+            }
+
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin: 16px 0 0;
+            }
+
+            .nav-item {
+                flex: 1 1 calc(50% - 8px);
+                min-width: 140px;
+            }
+
+            .main-panel {
+                padding: 24px 16px;
+            }
+
+            .dashboard-header {
+                align-items: flex-start;
+            }
+
+            .date-badge {
+                width: 100%;
+                justify-content: center;
+                display: inline-flex;
+            }
+
+            .flow-row,
+            .scope-row {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .mapeo-wrapper {
+                min-width: 100%;
+            }
+
+            .table-container {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-item {
+                flex: 1 1 100%;
+            }
+
+            .dashboard-header {
+                gap: 12px;
+            }
+
+            .content-card,
+            .module-card,
+            .actividad-block,
+            .program-item,
+            .edu-body,
+            .edu-footer {
+                padding: 18px;
+            }
+
+            .actividad-block h3 {
+                font-size: 1.1rem;
+            }
+
+            .grid-responsive-3,
+            .grid-responsive-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .app-footer {
+                padding: 0 12px;
+            }
+        }
+
+        /* Footer */
+        .app-footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #64748b;
+        }
+        .logo-medio {
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .tools-tag-container {
-            display: flex;
+            padding: 0 8px 24px;
+            border-bottom: 1px solid #334155;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
         }
 
-        .tool-tag {
-            background: #e9ecef;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #495057;
+        .logo-medio  img {
+            max-height: 200px;
+            max-width: 100%;
+            width: auto;
+            filter: brightness(0) invert(1);
+            object-fit: contain;
         }
-
-        .anexo-item.repo-btn {
-            background-color: #f0f7ff;
-            border: 2px solid #1d3a5f;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            /* Quita el subrayado del link */
-            color: inherit;
-            display: block;
-            /* Ocupa todo el ancho */
-            cursor: pointer;
-        }
-
-        .anexo-item.repo-btn:hover {
-            background-color: #1d3a5f;
-            color: white;
-            transform: scale(1.02);
-        }
-
-        .anexo-item.repo-btn p {
-            margin-bottom: 0;
-        }
-
-        .repo-link-text {
-            font-weight: bold;
-            text-decoration: underline;
-            display: block;
-            margin-top: 10px;
-        }
-
-        .anexo-item.repo-btn:hover .repo-link-text {
-            color: #ffcc00;
-            /* Color resaltado al hacer hover */
-        }
-
-        /* Grid */
-.acuerdo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin: 20px 0;
-}
-
-/* Cards */
-.acuerdo-card {
-    padding: 15px;
-    border-radius: 10px;
-    background: #f1f5f9;
-    font-size: 0.9em;
-    border-left: 4px solid;
-}
-
-.acuerdo-card strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-/* Colores */
-.acuerdo-card.green {
-    border-color: #22c55e;
-    background: #eafaf0;
-}
-
-.acuerdo-card.blue {
-    border-color: #3b82f6;
-    background: #eef4ff;
-}
-
-.acuerdo-card.purple {
-    border-color: #a855f7;
-    background: #f5efff;
-}
-
-/* Caja final */
-.acuerdo-box {
-    background: #eef2f7;
-    border-left: 5px solid #001f3f;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-.acuerdo-box h4 {
-    margin-bottom: 10px;
-    color: #001f3f;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .acuerdo-grid {
-        grid-template-columns: 1fr;
-    }
-}
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-section">
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663514551788/kCthg2DGRm6NuVQAqaMAg5/pasted_file_iFHJ7y_Logofundación_Mesadetrabajo1copia2_fba7c4ae.png"
-                    alt="Logo REDMEX">
-                <div class="logo-divider"></div>
-                <img src="./NUEVO LOGO_Mesa de trabajo 1 copia 9 BLANCO}.png" alt="Logo REDMEX">
-            </div>
+    <!-- SIDEBAR -->
+    <div class="app-sidebar">
+        <div class="logo-area">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663514551788/kCthg2DGRm6NuVQAqaMAg5/pasted_file_iFHJ7y_Logofundación_Mesadetrabajo1copia2_fba7c4ae.png"
+                alt="REDMEX">
+            <div class="logo-divider"></div>
+            <img src="./NUEVO LOGO_Mesa de trabajo 1 copia 9 BLANCO}.png" alt="IMPE">
         </div>
-    </header>
-
-    <div class="hero">
-        <div class="hero-content">
-            <h2>Manual de Capacitación</h2>
-            <p>Fundación Red Educativa México</p>
+        <ul class="nav-menu">
+            <li class="nav-item active" data-view="dashboard"><i class="fas fa-th-large"></i> Dashboard</li>
+            <li class="nav-item" data-view="intro"><i class="fas fa-door-open"></i> 1. Introducción</li>
+            <li class="nav-item" data-view="modulos"><i class="fas fa-layer-group"></i> Módulos de Capacitación</li>
+            <li class="nav-item" data-view="oferta"><i class="fas fa-graduation-cap"></i> 2. Oferta Educativa</li>
+            <li class="nav-item" data-view="identidad"><i class="fas fa-handshake"></i> 3. Identidad Institucional</li>
+            <li class="nav-item" data-view="mapeo"><i class="fas fa-sitemap"></i> 4. Definición de roles</li>
+            <li class="nav-item" data-view="actividades"><i class="fas fa-calendar-alt"></i> 5. Actividades</li>
+            <li class="nav-item" data-view="habilidades"><i class="fas fa-chart-line"></i> 6. Habilidades</li>
+            <li class="nav-item" data-view="evaluacion"><i class="fas fa-clipboard-list"></i> 7. Evaluación</li>
+            <li class="nav-item" data-view="seguimiento"><i class="fas fa-arrows-spin"></i> 8. Seguimiento</li>
+            <li class="nav-item" data-view="anexos"><i class="fas fa-paperclip"></i> 9. Anexos</li>
+        </ul>
+        <div style="margin-top: auto; padding: 20px 0; color: #64748b; font-size: 0.8rem;">
+            <i class="fas fa-shield"></i> Fundación REDMEX
         </div>
     </div>
 
-    <main>
-        <div class="toc">
-            <h2>Tabla de Contenidos</h2>
-            <div class="toc-grid">
-                <a data-section="intro" class="toc-link"><span class="toc-number">1</span><span>Introducción</span></a>
-                <a data-section="datos-generales" class="toc-link"><span class="toc-number">2</span><span>Datos
-                        Generales</span></a>
-                <a data-section="objetivo-general" class="toc-link"><span class="toc-number">3</span><span>Objetivo
-                        General</span></a>
-                <a data-section="metodologia" class="toc-link"><span
-                        class="toc-number">4</span><span>Metodología</span></a>
-                <a data-section="modulo1" class="toc-link"><span class="toc-number">5</span><span>Módulo 1:
-                        Inducción</span></a>
-                <a data-section="oferta-educativa" class="toc-link"><span class="toc-number">6</span><span>Oferta
-                        Educativa</span></a>
-                <a data-section="identidad" class="toc-link"><span class="toc-number">7</span><span>Identidad
-                        Institucional</span></a>
-                <a data-section="material" class="toc-link"><span class="toc-number">8</span><span>Material de
-                        Apoyo</span></a>
-                <a data-section="actividades" class="toc-link"><span class="toc-number">9</span><span>Actividades
-                        Realizadas</span></a>
-                <a data-section="habilidades" class="toc-link"><span class="toc-number">10</span><span>Desarrollo de
-                        Habilidades</span></a>
-                <a data-section="evaluacion" class="toc-link"><span class="toc-number">11</span><span>Evaluación y
-                        Resultados</span></a>
-                <a data-section="seguimiento" class="toc-link"><span class="toc-number">12</span><span>Seguimientos y
-                        Próximas Etapas</span></a>
-                <a data-section="anexos" class="toc-link"><span class="toc-number">13</span><span>Anexos</span></a>
+    <!-- PANEL PRINCIPAL -->
+    <div class="main-panel">
+<!-- DASHBOARD - Logos grandes con estilo hero -->
+<!-- DASHBOARD - Logos grandes con estilo hero (centrados) -->
+<div id="dashboard-view" class="section-view active">
+    <!-- Hero con logos centrados -->
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 32px; padding: 40px 20px; margin-bottom: 40px; text-align: center; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);">
+        <div class="logo-medio" style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <!-- Logo REDMEX -->
+            <div>
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663514551788/kCthg2DGRm6NuVQAqaMAg5/pasted_file_iFHJ7y_Logofundación_Mesadetrabajo1copia2_fba7c4ae.png" 
+                     alt="REDMEX" style="max-height: 200px; width: auto; filter: brightness(0) invert(1); object-fit: contain;">
+            </div>
+            <!-- Separador visual -->
+            <div style="width: 2px; height: 60px; background: rgba(255,255,255,0.3);"></div>
+            <!-- Logo IMPE (tipográfico elegante) -->
+            <div>
+                <img src="./NUEVO LOGO_Mesa de trabajo 1 copia 9 BLANCO}.png" 
+                     alt="IMPE" style="max-height: 200px; width: auto; filter: brightness(0) invert(1); object-fit: contain;">
             </div>
         </div>
 
-        <!-- 1. Introducción -->
-        <div id="intro" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>1. Introducción</h2>
-                </div>
-                <span class="chevron open">▼</span>
-            </div>
-            <div class="section-content open">
+    </div>
+
+    <div class="dashboard-header">
+        <h1>Manual de Capacitación</h1>
+        <div class="date-badge" style="background:white; padding:10px 20px; border-radius:40px;">
+            <i class="far fa-calendar-alt"></i> Abril 2026
+        </div>
+    </div>
+
+    <!-- Tarjetas de módulos (acceso rápido) -->
+    <div class="module-grid">
+        <div class="module-card" onclick="switchView('intro')">
+            <div class="card-icon"><i class="fas fa-door-open"></i></div>
+            <h3>Introducción</h3>
+            <p>Visión integral del programa de fortalecimiento.</p>
+        </div>
+        <div class="module-card" onclick="switchView('modulos')">
+            <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+            <h3>Módulos de Capacitación</h3>
+            <p>Los 7 módulos del programa.</p>
+        </div>
+        <div class="module-card" onclick="switchView('oferta')">
+            <div class="card-icon"><i class="fas fa-tags"></i></div>
+            <h3>Oferta Educativa</h3>
+            <p>Programas y valores vigentes (completo).</p>
+        </div>
+        <div class="module-card" onclick="switchView('mapeo')">
+            <div class="card-icon"><i class="fas fa-diagram-project"></i></div>
+            <h3>Roles y Alcances</h3>
+            <p>Mapeo operativo completo.</p>
+        </div>
+    </div>
+
+    <!-- Métricas clave -->
+    <div style="background:white; border-radius:24px; padding:28px;">
+        <h3><i class="fas fa-chart-simple"></i> Métricas clave</h3>
+        <div class="metrics-group" style="margin-top:20px;">
+            <div><strong>100%</strong><br>Participación</div>
+            <div><strong>Alto</strong><br>Compromiso</div>
+            <div><strong>Mejora</strong><br>Progresiva</div>
+        </div>
+    </div>
+</div>
+        <!-- 1. INTRODUCCIÓN (incluye Metodología) -->
+        <div id="intro-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-door-open"></i> 1. Introducción</h2>
                 <p>El presente manual documenta la estructura, ejecución y resultados del programa de capacitación
                     institucional implementado dentro de la Fundación Red Educativa México. Este documento ha sido
                     elaborado con el propósito de proporcionar a la Dirección una visión integral de las estrategias
@@ -1380,955 +915,377 @@
                 <p>La capacitación se ha diseñado bajo principios de alineación estratégica, asegurando que todos los
                     equipos clave comprendan y comuniquen de manera coherente la identidad, valores y oferta educativa
                     de la Fundación.</p>
-            </div>
-        </div>
 
-        <!-- 2. Datos Generales -->
-        <div id="datos-generales" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>2. Datos Generales del Programa</h2>
+                <!-- Datos Generales -->
+                <div id="datos-generales" style="scroll-margin-top: 80px;">
+                    <h3 style="margin-top: 32px; margin-bottom: 16px;"><i class="fas fa-database"></i> Datos Generales del Programa</h3>
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="font-weight:bold;">Nombre de la Capacitación</td>
+                            <td>Programa de Fortalecimiento Institucional</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">Institución</td>
+                            <td>Fundación Red Educativa México</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">Fecha de Inicio</td>
+                            <td>30 de marzo, 2026</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">Áreas Participantes</td>
+                            <td>Enlace Institucional, Área comercial (Lead senior, Lead Junior), Marketing, RH</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight:bold;">Responsable</td>
+                            <td>Coordinador de Capacitación</td>
+                        </tr>
+                    </table>
                 </div>
-                <span class="chevron">▼</span>
-            </div>
-            <div class="section-content">
-                <table>
-                    <tr>
-                        <td style="font-weight: bold; width: 33%;">Nombre de la Capacitación</td>
-                        <td>Programa de Fortalecimiento Institucional</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">Institución</td>
-                        <td>Fundación Red Educativa México</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">Fecha de Inicio</td>
-                        <td>30 de marzo, 2026</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">Áreas Participantes</td>
-                        <td>Enlace Institucional, Área comercial (Lead senior, Lead Junior), Marketing, RH</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: bold;">Responsable</td>
-                        <td>Coordinador de Capacitación</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
 
-        <!-- 3. Objetivo General -->
-        <div id="objetivo-general" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>3. Objetivo General</h2>
-                </div>
-                <span class="chevron">▼</span>
-            </div>
-            <div class="section-content">
-                <div class="card">
-                    <p>El objetivo principal de este programa es <strong>fortalecer el conocimiento
-                            institucional</strong> de los participantes, optimizando sus habilidades de comunicación y
-                        presentación profesional. Se busca garantizar un <strong>dominio absoluto</strong> de nuestra
-                        oferta educativa y del marco legal que nos sustenta (Acuerdo 286 de la SEP), permitiendo a los
-                        equipos transmitir el valor, la misión y el propósito de la Fundación con <strong>claridad,
-                            seguridad y empatía</strong> ante cualquier interlocutor.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4. Metodología -->
-        <div id="metodologia" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>4. Metodología de Trabajo</h2>
-                </div>
-                <span class="chevron">▼</span>
-            </div>
-            <div class="section-content">
-                <div class="metodologia-img"></div>
-                <p class="metodologia-texto">La capacitación se desarrolla bajo un enfoque práctico, progresivo y
-                    centrado en la aplicación del conocimiento, evitando esquemas basados únicamente en la memorización.
-                    Se busca que cada participante interiorice, comprenda y ejecute los conceptos en escenarios reales
-                    de interacción profesional.</p>
-                <div class="metodologia-grid">
-                    <div class="metodologia-item">
-                        <h3>Exposición Guiada</h3>
-                        <p>Presentación de conceptos clave alineados a la identidad institucional.</p>
+                <!-- Objetivo General -->
+                <div id="objetivo-general" style="scroll-margin-top: 80px;">
+                    <h3 style="margin-top: 32px; margin-bottom: 16px;"><i class="fas fa-bullseye"></i> Objetivo General</h3>
+                    <div style="background:#f8faff; padding:1.8rem; border-radius:20px; border-left:6px solid var(--accent-gold);">
+                        <p>El objetivo principal de este programa es <strong>fortalecer el conocimiento institucional</strong> de los participantes, optimizando sus habilidades de comunicación y presentación profesional. Se busca garantizar un <strong>dominio absoluto</strong> de nuestra oferta educativa y del marco legal que nos sustenta (Acuerdo 286 de la SEP), permitiendo a los equipos transmitir el valor, la misión y el propósito de la Fundación con <strong>claridad, seguridad y empatía</strong> ante cualquier interlocutor.</p>
                     </div>
-                    <div class="metodologia-item">
-                        <h3>Aplicación Práctica</h3>
-                        <p>Ejercicios, simulaciones y dinámicas en escenarios reales.</p>
+                </div>
+
+                <!-- Metodología de Trabajo (integrada) -->
+                <div style="margin-top: 40px;">
+                    <h3><i class="fas fa-cogs"></i> Metodología de Trabajo</h3>
+                    <div style="background:#eef3fa; border-radius:24px; padding:2rem; margin-top: 16px;">
+                        <p>La capacitación se desarrolla bajo un enfoque práctico, progresivo y centrado en la aplicación del conocimiento, evitando esquemas basados únicamente en la memorización. Se busca que cada participante interiorice, comprenda y ejecute los conceptos en escenarios reales de interacción profesional.</p>
                     </div>
-                    <div class="metodologia-item">
-                        <h3>Retroalimentación Continua</h3>
-                        <p>Corrección en tiempo real para mejorar comunicación y discurso.</p>
+                    <div class="grid-responsive-3" style="margin-top: 20px;">
+                        <div style="background:white; padding:1.5rem; border-radius:20px;">
+                            <h4>Exposición Guiada</h4>
+                            <p>Presentación de conceptos clave alineados a la identidad institucional.</p>
+                        </div>
+                        <div style="background:white; padding:1.5rem; border-radius:20px;">
+                            <h4>Aplicación Práctica</h4>
+                            <p>Ejercicios, simulaciones y dinámicas en escenarios reales.</p>
+                        </div>
+                        <div style="background:white; padding:1.5rem; border-radius:20px;">
+                            <h4>Retroalimentación Continua</h4>
+                            <p>Corrección en tiempo real para mejorar comunicación y discurso.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 5. Módulo 1: Inducción -->
-        <div id="modulo1" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>5. Módulo 1: Inducción Institucional</h2>
-                </div>
-                <span class="chevron">▼</span>
-            </div>
-            <div class="section-content">
-                <p>El Módulo 1 ha sido diseñado para establecer una base sólida del conocimiento institucional,
-                    alineando al equipo con la identidad, propósito y alcance de la Fundación Red Educativa México.</p>
-                <div class="subsection-header" onclick="toggleSubsection(this)">
-                    <h3>5.1 ¿Qué Somos?</h3><span class="chevron">▼</span>
-                </div>
+        <!-- MÓDULOS DE CAPACITACIÓN (reorganizados con duración y tabla de actividades) -->
+        <div id="modulos-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-layer-group"></i> Módulos de Capacitación</h2>
+                <p>El programa se compone de siete módulos estratégicos. A continuación se detalla la duración total, las actividades específicas, los tiempos asignados y los recursos necesarios para cada módulo.</p>
+
+                <!-- Módulo 1 -->
+                <div class="subsection-header" onclick="toggleSubsection(this)"><span><i class="fas fa-book-open"></i> Módulo 1: Inducción Institucional</span><i class="fas fa-chevron-down"></i></div>
                 <div class="subsection-content">
-                    <p>Somos una <strong>Fundación comprometida con la educación y la profesionalización de las personas
-                            en México</strong>, reconociendo la importancia de la formación como una herramienta clave
-                        para transformar vidas. Trabajamos de la mano con <strong>instituciones educativas y aliados
-                            estratégicos</strong> para acercar oportunidades reales.</p>
+                    <div class="modulo-seccion"><h4>Objetivo</h4><p>Lograr una comprensión profunda de la identidad institucional, misión, visión y propósito, diferenciando claramente los roles de la Fundación, la Universidad IMPE y CONAIP, bajo el marco del Acuerdo 286 de la SEP.</p></div>
+                    <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Historia, identidad, misión, visión y propósito de Fundación Red Educativa México.</li><li>Oferta educativa completa, programas académicos, becas y servicios.</li><li>Organigrama y líneas de comunicación.</li><li>Diferenciación de roles: Funciones específicas de Fundación Red Educativa México, Universidad IMPE y CONAIP (qué SÍ y qué NO hace cada uno).</li><li>Marco Legal: Acuerdo 286 de la SEP (qué es, alcance y validez).</li></ul></div>
+                    <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
+                                            <p><strong>Duración total: 3 horas 30 minutos</strong></p>
+
+                        <table class="actividades-tabla">
+                            <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
+                            <tbody>
+                                <tr><td>Sesión Interactiva "Conoce tu Fundación"</td><td>60 min</td><td>Presentación de diapositivas con videos institucionales, fichas técnicas, guías, e-cards.</td></tr>
+                                <tr><td>Estudio de Caso "El Rol de Cada Quien"</td><td>90 min</td><td>Fichas de casos impresas, pizarrón para diagramar.</td></tr>
+                                <tr><td>Debate Guiado "El Acuerdo 286 en la Práctica"</td><td>60 min</td><td>Resumen ejecutivo del Acuerdo 286, video explicativo animado.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modulo-seccion"><h4>Evaluación</h4><ul><li>Cuestionario de opción múltiple sobre datos institucionales y el Acuerdo 286.</li><li>Ejercicio de role-play para explicar la diferenciación de roles a un prospecto.</li></ul></div>
+                    <div class="modulo-seccion"><h4>Material de Apoyo</h4><p>Fichas informativas institucionales actualizadas, documentos detallados de definición de roles, mapeos, guía de identidad, organigrama.</p></div>
                 </div>
 
-                <div class="subsection-header" onclick="toggleSubsection(this)">
-                    <h3>5.2 ¿Quiénes Somos?</h3><span class="chevron">▼</span>
-                </div>
+                <!-- Módulo 2 -->
+                <div class="subsection-header" onclick="toggleSubsection(this)"><span><i class="fas fa-chalkboard-user"></i> Módulo 2: Presentación Enlace Institucional y Comercial</span><i class="fas fa-chevron-down"></i></div>
                 <div class="subsection-content">
-                    <p>Somos una Fundación que pertenece a un grupo educativo designado por la Secretaría de Educación
-                        Pública Federal, cuya misión es impulsar la profesionalización de las personas en México,
-                        brindando oportunidades para que puedan concluir su formación académica.</p>
+                    <div class="modulo-seccion"><h4>Objetivo</h4><p>Desarrollar habilidades efectivas de presentación para interacciones institucionales y comerciales, enfocándose en la claridad, el profesionalismo y la comunicación persuasiva.</p></div>
+                    <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Estructura de una presentación institucional efectiva.</li><li>Mensajes clave para diferentes audiencias (prospectos, socios, autoridades).</li><li>Manejo de objeciones iniciales y preguntas frecuentes.</li><li>Alineación con la marca y el mensaje de Fundación Red Educativa México.</li></ul></div>
+                    <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
+                                            <p><strong>Duración total: 3 horas 30 minutos</strong></p>
+
+                        <table class="actividades-tabla">
+                            <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
+                            <tbody>
+                                <tr><td>Taller "Mi Discurso de Elevador"</td><td>90 min</td><td>Cronómetro, tarjetas para notas, ejemplos de discursos efectivos.</td></tr>
+                                <tr><td>Simulación "Primera Impresión"</td><td>120 min</td><td>Speech de escenarios, lista de cotejo para evaluación.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modulo-seccion"><h4>Evaluación</h4><p>Rúbrica de evaluación para el discurso de elevador y la simulación de primera impresión. Listas de cotejo durante las interacciones simuladas.</p></div>
+                    <div class="modulo-seccion"><h4>Material de Apoyo</h4><p>Plantillas de presentación, guías de mensajes clave, documento de preguntas y respuestas frecuentes.</p></div>
                 </div>
 
-                <div class="subsection-header" onclick="toggleSubsection(this)">
-                    <h3>5.3 Filosofía Institucional (Misión y Visión)</h3><span class="chevron">▼</span>
-                </div>
+                <!-- Módulo 3 -->
+                <div class="subsection-header" onclick="toggleSubsection(this)"><span><i class="fas fa-laptop"></i> Módulo 3: Simulación de Presentaciones (En Línea, Presencial, Telefónica)</span><i class="fas fa-chevron-down"></i></div>
                 <div class="subsection-content">
-                    <h4>Misión</h4>
-                    <p>Promover la educación y la profesionalización de las personas, formando individuos íntegros
-                        capaces de desarrollarse en los ámbitos personal, social y profesional, a través de
-                        oportunidades educativas, apoyos y programas que contribuyan a mejorar sus condiciones de vida.
-                    </p>
-                    <h4>Visión</h4>
-                    <p>Ser una Fundación referente en la promoción de la educación y la profesionalización en México,
-                        impulsando oportunidades de aprendizaje que permitan a las personas desarrollar sus habilidades
-                        y asumir un papel activo en su entorno, contribuyendo a la transformación de su futuro.</p>
+                    <div class="modulo-seccion"><h4>Objetivo</h4><p>Dominar la entrega de presentaciones institucionales y comerciales en diversos formatos (en línea, presencial, telefónica), adaptando el estilo de comunicación y las herramientas de manera efectiva.</p></div>
+                    <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Mejores prácticas para presentaciones en línea (uso de cámara, audio, compartir pantalla, interacción).</li><li>Técnicas para una entrega presencial atractiva y participativa.</li><li>Comunicación efectiva por teléfono.</li><li>Adaptación del mensaje y el lenguaje corporal a cada formato.</li></ul></div>
+                    <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
+                                            <p><strong>Duración total: 5 horas</strong></p>
+
+                        <table class="actividades-tabla">
+                            <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
+                            <tbody>
+                                <tr><td>Role-play "Presentación Virtual Exitosa"</td><td>120 min</td><td>Cuentas de Zoom/Meet/Teams, escenarios de presentación, lista de cotejo de desempeño. Video sugerido: Tutoriales cortos.</td></tr>
+                                <tr><td>Role-play "Encuentro Presencial Clave"</td><td>90 min</td><td>Escenarios de reunión, material impreso de la Fundación, rúbrica de evaluación.</td></tr>
+                                <tr><td>Role-play "Llamada de Impacto"</td><td>90 min</td><td>Guiones de llamadas, grabadora de voz (opcional), lista de cotejo.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modulo-seccion"><h4>Evaluación</h4><p>Lista de verificación de desempeño para cada formato de presentación. Formularios de retroalimentación de compañeros y facilitadores.</p></div>
+                    <div class="modulo-seccion"><h4>Material de Apoyo</h4><p>Tarjetas de escenarios, guías de plataformas de reuniones virtuales, pautas de etiqueta telefónica.</p></div>
                 </div>
 
-                <div class="subsection-header" onclick="toggleSubsection(this)">
-    <h3>5.4 Acuerdo 286</h3>
-    <span class="chevron">▼</span>
-</div>
+                <!-- Módulo 4 -->
+                <div class="subsection-header" onclick="toggleSubsection(this)"><span><i class="fas fa-microphone-alt"></i> Módulo 4: Hablar en Público – Comunicación Verbal, No Verbal y Regulación de la Voz</span><i class="fas fa-chevron-down"></i></div>
+                <div class="subsection-content">
+                    <div class="modulo-seccion"><h4>Objetivo</h4><p>Mejorar las habilidades para hablar en público, aumentando la claridad verbal, dominando las señales no verbales y regulando la voz para una comunicación impactante y persuasiva.</p></div>
+                    <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Técnicas para eliminar muletillas y mejorar la articulación.</li><li>Lenguaje corporal (postura, gestos, contacto visual, expresión facial).</li><li>Modulación de la voz (tono, volumen, ritmo, pausas).</li><li>Manejo del miedo escénico.</li></ul></div>
+                    <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
+                                            <p><strong>Duración total: 2 horas 30 minutos</strong></p>
 
-<div class="subsection-content">
-
-    <p>
-        El Acuerdo 286 de la SEP es una disposición legal fundamental que respalda la operación institucional de la Fundación Red Educativa México. 
-        Este acuerdo reconoce el derecho de las personas a certificar sus conocimientos, sin importar si estos fueron adquiridos de forma autodidacta o a través de la experiencia laboral.
-    </p>
-
-    <!-- Bloques -->
-    <div class="acuerdo-grid">
-
-        <div class="acuerdo-card green">
-            <strong>Publicación Original</strong>
-            <p>Emitido por la Secretaría de Educación Pública en el año 2000</p>
-        </div>
-
-        <div class="acuerdo-card blue">
-            <strong>Objetivo Jurídico</strong>
-            <p>Establecer normas y criterios para revalidación, equivalencia y acreditación de conocimientos</p>
-        </div>
-
-        <div class="acuerdo-card purple">
-            <strong>Validez Nacional</strong>
-            <p>Plena validez oficial en toda la República Mexicana</p>
-        </div>
-
-    </div>
-
-    <!-- Caja final -->
-    <div class="acuerdo-box">
-        <h4>Alcance y Beneficios</h4>
-        <p>
-            Los documentos (certificados o títulos) emitidos bajo este acuerdo tienen plena validez oficial en toda la República Mexicana,
-            permitiendo a los participantes continuar con estudios de posgrado o mejorar su perfil profesional de manera legal y reconocida.
-            Esto representa una oportunidad transformadora para personas que buscan profesionalizarse sin necesidad de asistir a aulas tradicionales.
-        </p>
-    </div>
-
-</div>
-            </div>
-        </div>
-
-        <!-- 6. Oferta Educativa -->
- <div id="oferta-educativa" class="section">
-    <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-title">
-            <h2>6. Oferta Educativa</h2>
-        </div>
-        <span class="chevron">▼</span>
-    </div>
-    <div class="section-content">
-        <div class="oferta-grid">
-            <!-- Bachillerato General (información completa) -->
-            <div class="edu-card">
-                <div class="edu-card-header bg-blue">
-                    <h3 style="color:#fff;">Bachillerato General</h3>
+                        <table class="actividades-tabla">
+                            <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
+                            <tbody>
+                                <tr><td>Ejercicio "Cazador de Muletillas"</td><td>60 min</td><td>Listas de muletillas comunes, cronómetro.</td></tr>
+                                <tr><td>Análisis de Video "Mi Lenguaje Corporal"</td><td>90 min</td><td>Cámara de video/celular, proyector, rúbrica de lenguaje corporal. Video sugerido: ejemplos de lenguaje corporal efectivo.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modulo-seccion"><h4>Evaluación</h4><p>Lista de verificación de observación para elementos verbales y no verbales durante exposiciones. Formularios de auto-evaluación.</p></div>
+                    <div class="modulo-seccion"><h4>Material de Apoyo</h4><p>Ejercicios de voz, guías de lenguaje corporal, hojas de práctica para eliminar muletillas.</p></div>
                 </div>
-                <div class="edu-card-content">
-                    <span class="edu-tag">Modalidad: Virtual / Presencial / Híbrida</span>
-                    <p>Programa dirigido a personas mayores de 18 años que no han concluido su bachillerato, permitiéndoles obtener su certificado mediante un proceso de evaluación basado en sus conocimientos adquiridos, permitiendo cursar el proceso en modalidad virtual, presencial o híbrida.</p>
-                    <strong>Áreas de evaluación:</strong>
-                    <ul class="edu-list">
-                        <li>Comunicación</li>
-                        <li>Matemáticas</li>
-                        <li>Ciencias Sociales</li>
-                        <li>Ciencias Experimentales</li>
-                        <li>Humanidades</li>
-                    </ul>
-                </div>
-                <div class="edu-footer">
-                    <strong>Perfil de ingreso:</strong> Mayores de 18 años, personas que no concluyeron el bachillerato, personas con conocimientos adquiridos por experiencia o estudio previos.
-                </div>
-            </div>
 
-            <!-- Titulación por Experiencia Laboral (información completa) -->
-            <div class="edu-card">
-                <div class="edu-card-header bg-blue">
-                    <h3 style="color:#fff;">Titulación por Experiencia Laboral</h3>
+                <!-- Módulo 5 -->
+                <div class="subsection-header" onclick="toggleSubsection(this)"><span><i class="fas fa-pen-fancy"></i> Módulo 5: Técnicas de Redacción y Ortografía Profesional (WhatsApp y Correos Electrónicos)</span><i class="fas fa-chevron-down"></i></div>
+                <div class="subsection-content">
+                    <div class="modulo-seccion"><h4>Objetivo</h4><p>Desarrollar habilidades de redacción profesional para la comunicación digital, asegurando claridad, concisión y corrección gramatical y ortográfica.</p></div>
+                    <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Principios de redacción clara y concisa.</li><li>Estructura y tono de correos electrónicos profesionales.</li><li>Mejores prácticas para WhatsApp.</li><li>Reglas básicas de ortografía y gramática.</li></ul></div>
+                    <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
+                                            <p><strong>Duración total: 4 horas 30 minutos</strong></p>
+
+                        <table class="actividades-tabla">
+                            <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
+                            <tbody>
+                                <tr><td>Taller "Correo Electrónico Perfecto"</td><td>120 min</td><td>Plantillas de correo, ejemplos de correos efectivos/inefectivos.</td></tr>
+                                <tr><td>Ejercicio "WhatsApp Profesional"</td><td>60 min</td><td>Escenarios de comunicación por WhatsApp.</td></tr>
+                                <tr><td>Dictado y Corrección de Textos</td><td>90 min</td><td>Textos con errores ortográficos y gramaticales, guías de ortografía.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modulo-seccion"><h4>Evaluación</h4><p>Evaluación de calidad de redacción, prueba de ortografía y gramática, revisión de plantillas.</p></div>
+                    <div class="modulo-seccion"><h4>Material de Apoyo</h4><p>Guía de estilo de redacción institucional, plantillas de correo electrónico, lista de errores ortográficos comunes.</p></div>
                 </div>
-                <div class="edu-card-content">
-                    <span class="edu-tag">Acuerdo 286 | 100% Virtual o Híbrido</span>
-                    <p>Programa 100% virtual o híbrido que permite obtener un título profesional con base en el Acuerdo 286, dirigido a personas con actividad laboral, mediante un proceso de evaluación oficial basado en su trayectoria profesional.</p>
-                    <strong>Áreas disponibles:</strong>
-                    <ul class="edu-list">
-                        <li>Ingeniería Industrial</li>
-                        <li>Derecho</li>
-                        <li>Contaduría</li>
-                        <li>Educación Preescolar</li>
-                        <li>Ingeniería Computacional</li>
-                        <li>Ciencias de la Comunicación</li>
-                        <li>Mercadotecnia</li>
-                        <li>Ciencias Políticas y Administración Pública</li>
-                    </ul>
+
+                <!-- Módulo 6 -->
+                <div class="subsection-header" onclick="toggleSubsection(this)"><span><i class="fas fa-chart-line"></i> Módulo 6: Técnicas de Ventas, Negociación y Cierres</span><i class="fas fa-chevron-down"></i></div>
+                <div class="subsection-content">
+                    <div class="modulo-seccion"><h4>Objetivo</h4><p>Equipar al equipo de Ventas y Enlace Institucional con técnicas avanzadas de negociación y cierre, enfocadas en la oferta educativa y la consecución de convenios.</p></div>
+                    <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Ciclo de ventas aplicado al sector educativo.</li><li>Técnicas de sondeo y detección de necesidades.</li><li>Manejo avanzado de objeciones.</li><li>Estrategias de negociación y cierre efectivo.</li><li>Seguimiento post-cierre y fidelización.</li></ul></div>
+                    <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
+                                            <p><strong>Duración total: 8 horas</strong></p>
+
+                        <table class="actividades-tabla">
+                            <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
+                            <tbody>
+                                <tr><td>Simulación "Cierre de Inscripción Exitosa" (Ventas)</td><td>180 min</td><td>Escenarios de prospectos con diferentes perfiles, rúbrica de evaluación de ventas. Video sugerido: ejemplos de cierres exitosos.</td></tr>
+                                <tr><td>Simulación "Negociación de Convenio Estratégico" (Enlace)</td><td>180 min</td><td>Escenarios de instituciones, rúbrica de negociación de convenios. Video sugerido: ejemplos de alianzas estratégicas.</td></tr>
+                                <tr><td>Taller "Manejo de Objeciones Complejas" (Ambas áreas)</td><td>120 min</td><td>Listado de objeciones frecuentes, tarjetas con respuestas modelo.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modulo-seccion"><h4>Evaluación</h4><p>Evaluación de desempeño en simulaciones, análisis de resultados de cierres simulados, cuestionarios.</p></div>
+                    <div class="modulo-seccion"><h4>Material de Apoyo</h4><p>Guía de técnicas de ventas y negociación avanzadas, manual de manejo de objeciones, plantillas de seguimiento.</p></div>
                 </div>
-                <div class="edu-footer">
-                    <strong>Perfil de ingreso:</strong> Personas con experiencia laboral, personas que buscan titularse.
+
+                <!-- Módulo 7 -->
+                <div class="subsection-header" onclick="toggleSubsection(this)"><span><i class="fas fa-video"></i> Módulo 7: Uso de Plataformas Digitales para las Presentaciones (Invitación, Uso de Zoom, Meet y Teams)</span><i class="fas fa-chevron-down"></i></div>
+                <div class="subsection-content">
+                    <div class="modulo-seccion"><h4>Objetivo</h4><p>Capacitar al equipo en el uso eficiente y profesional de plataformas digitales para reuniones y presentaciones (Zoom, Google Meet, Microsoft Teams), desde la creación de invitaciones hasta la gestión de la sesión.</p></div>
+                    <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Creación y envío de invitaciones profesionales.</li><li>Funcionalidades clave de Zoom, Meet y Teams.</li><li>Etiqueta y protocolo en reuniones virtuales.</li><li>Resolución de problemas técnicos comunes.</li><li>Configuración de seguridad y privacidad.</li></ul></div>
+                    <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
+                                            <p><strong>Duración total: 4 horas 30 minutos</strong></p>
+
+                        <table class="actividades-tabla">
+                            <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
+                            <tbody>
+                                <tr><td>Taller "Anfitrión Digital"</td><td>120 min</td><td>Cuentas de Zoom/Meet/Teams, lista de verificación de anfitrión. Video sugerido: tutoriales avanzados.</td></tr>
+                                <tr><td>Ejercicio "Presentación Interactiva"</td><td>90 min</td><td>Escenarios de presentación, rúbrica de interacción digital.</td></tr>
+                                <tr><td>Simulación "Soporte Técnico Rápido"</td><td>60 min</td><td>Guía de problemas comunes y soluciones.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modulo-seccion"><h4>Evaluación</h4><p>Lista de cotejo de habilidades en el uso de cada plataforma, evaluación práctica de gestión de reunión virtual, cuestionario.</p></div>
+                    <div class="modulo-seccion"><h4>Material de Apoyo</h4><p>Manuales de usuario simplificados para Zoom, Meet y Teams, plantillas de invitación, lista de verificación.</p></div>
                 </div>
             </div>
+        </div>
 
-            <!-- Licenciaturas Ejecutivas (todas las carreras con RVOE) -->
-            <div class="edu-card">
-                <div class="edu-card-header bg-blue">
-                    <h3 style="color:#fff;">Licenciaturas Ejecutivas</h3>
+        <!-- 2. OFERTA EDUCATIVA -->
+        <div id="oferta-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-graduation-cap"></i> 2. Oferta Educativa</h2>
+                <div class="oferta-grid">
+                    <div class="edu-card"><div class="edu-header"><h3>Bachillerato General</h3><span>Modalidad: Virtual / Presencial / Híbrida</span></div><div class="edu-body"><p>Programa dirigido a personas mayores de 18 años que no han concluido su bachillerato, permitiéndoles obtener su certificado mediante un proceso de evaluación basado en sus conocimientos adquiridos.</p><strong>Áreas de evaluación:</strong><ul class="edu-list"><li>Comunicación</li><li>Matemáticas</li><li>Ciencias Sociales</li><li>Ciencias Experimentales</li><li>Humanidades</li></ul></div><div class="edu-footer"><strong>Perfil de ingreso:</strong> Mayores de 18 años, personas que no concluyeron el bachillerato.</div></div>
+                    <div class="edu-card"><div class="edu-header"><h3>Titulación por Experiencia Laboral</h3><span>Acuerdo 286 | 100% Virtual o Híbrido</span></div><div class="edu-body"><p>Programa que permite obtener un título profesional con base en el Acuerdo 286, dirigido a personas con actividad laboral.</p><strong>Áreas disponibles:</strong><ul class="edu-list"><li>Ingeniería Industrial</li><li>Derecho</li><li>Contaduría</li><li>Educación Preescolar</li><li>Ingeniería Computacional</li><li>Ciencias de la Comunicación</li><li>Mercadotecnia</li><li>Ciencias Políticas y Administración Pública</li></ul></div><div class="edu-footer"><strong>Perfil de ingreso:</strong> Personas con experiencia laboral.</div></div>
+                    <div class="edu-card"><div class="edu-header"><h3>Licenciaturas Ejecutivas</h3><span>Duración: 2.5 Años | RVOE</span></div><div class="edu-body"><p>Carreras ejecutivas en 2 años y medio. Para personas con actividad laboral o familiar.</p><strong>Titulaciones con RVOE:</strong><ul class="edu-list"><li>Técnico Superior Universitario en Minería</li><li>Seguridad Pública</li><li>Administración en Recursos Humanos</li><li>Mercadotecnia</li><li>Ciencias de la Educación</li><li>Contaduría</li><li>Derecho</li><li>Protección Civil</li><li>Lengua Extranjera Inglesa</li><li>Ciberseguridad</li><li>Seguridad Publica</li><li>Ingeniería Civil</li><li>Ingeniería Industrial</li><li>Ciencia de Datos</li><li>Desarrollo de Software</li></ul></div><div class="edu-footer"><strong>Ventaja:</strong> Esquema accesible y totalmente virtual.</div></div>
+                    <div class="edu-card"><div class="edu-header"><h3>Bachillerato Incluyente</h3><span>Para menores de 18 años</span></div><div class="edu-body"><p>Concluye en menor tiempo con especialidades tecnológicas de alta demanda.</p><strong>Especialidades:</strong><ul class="edu-list"><li>Inteligencia Artificial (IA)</li><li>Ciberseguridad</li><li>Programación</li><li>Análisis y Manejo de Datos</li></ul></div><div class="edu-footer"><strong>Perfil:</strong> Egresados de secundaria.</div></div>
+                    <div class="edu-card"><div class="edu-header"><h3>Inglés A1</h3><span>Duración: 20 Semanas</span></div><div class="edu-body"><p>English Education for Life: Bases sólidas para el futuro académico.</p><ul class="edu-list"><li>5 Módulos intensivos</li><li>Comprensión y Conversación</li><li>Modalidad Virtual</li></ul></div><div class="edu-footer"><strong>Nota:</strong> Mínimo 10 alumnos para apertura de grupo.</div></div>
                 </div>
-                <div class="edu-card-content">
-                    <span class="edu-tag">Duración: 2.5 Años | RVOE</span>
-                    <p>Carreras ejecutivas en 2 años y medio. Para personas con actividad laboral o familiar que buscan formarse profesionalmente mediante un esquema accesible y completamente virtual.</p>
-                    <strong>Titulaciones con RVOE:</strong>
-                    <ul class="edu-list">
-                        <li>Técnico Superior Universitario en Minería</li>
-                        <li>Seguridad Pública </li>
-                        <li>Administración en Recursos Humanos</li>
-                        <li>Mercadotecnia </li>
-                        <li>Ciencias de la Educación</li>
-                        <li>Contaduría </li>
-                        <li>Derecho </li>
-                        <li>Protección Civil </li>
-                        <li>Lengua Extranjera Inglesa</li>
-                        <li>Ciberseguridad</li>
-                        <li>Seguridad Pública </li>
-                        <li>Ingeniería Civil </li>
-                        <li>Ingeniería Industrial </li>
-                        <li>Ciencia de Datos</li>
-                        <li>Desarrollo de Software</li>
-                    </ul>
-                </div>
-                <div class="edu-footer">
-                    <strong>Ventaja:</strong> Esquema accesible y totalmente virtual.
+                <div class="subsection-header" onclick="toggleSubsection(this)"><span><i class="fas fa-tag"></i> Valores de Programas Educativos</span><i class="fas fa-chevron-down"></i></div>
+                <div class="subsection-content">
+                    <div class="program-card"><div class="program-header blue"><h4>TITULACIÓN POR EXPERIENCIA LABORAL</h4><span>ACUERDO 286</span></div><div class="program-body"><div class="program-item"><p>VALOR A PÚBLICO EN GENERAL</p><h3>$63,960.00</h3></div><div class="program-item"><p>VALOR CONVENIO EN PARCIALIDADES</p><h3>$36,860.00</h3></div><div class="program-item highlight"><p>BECA 50% EN UNA EXHIBICIÓN</p><h3>$31,980.00</h3></div></div></div>
+                    <div class="program-card"><div class="program-header blue"><h4>BACHILLERATO GENERAL</h4><span>ACUERDO 286</span></div><div class="program-body"><div class="program-item"><p>VALOR A PÚBLICO EN GENERAL</p><h3>$13,800.00</h3></div><div class="program-item"><p>VALOR CONVENIO EN PARCIALIDADES</p><h3>$7,800.00</h3></div><div class="program-item highlight"><p>BECA 50% EN UNA EXHIBICIÓN</p><h3>$6,900.00</h3></div></div></div>
+                    <div class="program-card"><div class="program-header gold"><h4>LICENCIATURAS EJECUTIVAS</h4><span>PROGRAMAS FORMATIVOS</span></div><div class="program-body"><div class="program-item"><p>VALOR A PÚBLICO EN GENERAL</p><h3>$75,924.00</h3></div><div class="program-item"><p>VALOR CONVENIO EN UNA EXHIBICIÓN</p><h3>$29,970.00</h3></div><div class="program-item highlight"><p>BECA 50% EN PARCIALIDADES</p><h4>INSCRIPCIÓN: $999</h4><h4>REINSCRIPCIÓN CUATRIMESTRAL: $999</h4><h4>COLEGIATURA MENSUAL: $999</h4><h3>$37,962.00</h3></div></div></div>
+                    <div class="program-card"><div class="program-header gold"><h4>BACHILLERATO INCLUYENTE</h4><span>PROGRAMAS FORMATIVOS</span></div><div class="program-body"><div class="program-item"><p>VALOR A PÚBLICO EN GENERAL</p><h3>$29,940.00</h3></div><div class="program-item"><p>VALOR CONVENIO EN UNA EXHIBICIÓN</p><h3>$11,976.00</h3></div><div class="program-item highlight"><p>BECA 50% EN PARCIALIDADES</p><h4>INSCRIPCIÓN: $499</h4><h4>REINSCRIPCIÓN CUATRIMESTRAL: $499</h4><h4>COLEGIATURA MENSUAL: $499</h4><h3>$14,970.00</h3></div></div></div>
+                    <div class="program-card"><div class="program-header blue"><h4>ENGLISH EDUCATION FOR LIFE</h4><span>PROGRAMA DE INGLÉS</span></div><div class="program-body"><div class="program-item"><p>VALOR A PÚBLICO EN GENERAL</p><h3>$20,000.00</h3></div><div class="program-item"><p>EN UNA EXHIBICIÓN</p><h3>$8,999.00</h3></div><div class="program-item highlight"><p>BECA 50% PAGO EN PARCIALIDADES</p><h4>INSCRIPCIÓN: $1,500</h4><h4>COLEGIATURA MENSUAL: $2,100</h4></div></div></div>
                 </div>
             </div>
-
-            <!-- Bachillerato Inclusivo (sin cambios) -->
-            <div class="edu-card">
-                <div class="edu-card-header bg-blue">
-                    <h3 style="color:#fff;">Bachillerato Incluyente</h3>
-                </div>
-                <div class="edu-card-content">
-                    <span class="edu-tag">Para menores de 18 años</span>
-                    <p>Concluye en menor tiempo con especialidades tecnológicas de alta demanda.</p>
-                    <strong>Especialidades:</strong>
-                    <ul class="edu-list">
-                        <li>Inteligencia Artificial (IA)</li>
-                        <li>Ciberseguridad</li>
-                        <li>Programación</li>
-                        <li>Análisis y Manejo de Datos</li>
-
-                    </ul>
-                </div>
-                <div class="edu-footer"><strong>Perfil:</strong> Egresados de secundaria.</div>
-            </div>
-
-            <!-- Inglés A1 (sin cambios) -->
-            <div class="edu-card">
-                <div class="edu-card-header bg-blue">
-                    <h3 style="color:#fff;">Inglés A1</h3>
-                </div>
-                <div class="edu-card-content">
-                    <span class="edu-tag">Duración: 20 Semanas</span>
-                    <p>English Education for Life: Bases sólidas para el futuro académico.</p>
-                    <ul class="edu-list">
-                        <li>5 Módulos intensivos</li>
-                        <li>Comprensión y Conversación</li>
-                        <li>Modalidad Virtual</li>
-                    </ul>
-                </div>
-                <div class="edu-footer"><strong>Nota:</strong> Mínimo 10 alumnos para apertura de grupo.</div>
-            </div>
         </div>
 
-        <!-- Valores de Programas Educativos (se mantiene exactamente igual) -->
- <div class="subsection-header" onclick="toggleSubsection(this)">
-    <h3>Valores de Programas Educativos</h3>
-    <span class="chevron">▼</span>
-</div>
-
-<div class="subsection-content">
-
-    <!-- TITULACIÓN -->
-    <div class="program-card">
-        <div class="program-header blue">
-            <h4>TITULACIÓN POR EXPERIENCIA LABORAL</h4>
-            <span>ACUERDO 286</span>
-        </div>
-        <div class="program-body">
-            <div class="program-item">
-                <p>VALOR A PÚBLICO EN GENERAL</p>
-                <h3>$63,960.00</h3>
-            </div>
-            <div class="program-item">
-                <p>VALOR CONVENIO EN PARCIALIDADES</p>
-                <h3>$36,860.00</h3>
-            </div>
-            <div class="program-item highlight">
-                <p>BECA 50% EN UNA EXHIBICIÓN</p>
-                <h3>$31,980.00</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- BACHILLERATO GENERAL -->
-    <div class="program-card">
-        <div class="program-header blue">
-            <h4>BACHILLERATO GENERAL</h4>
-            <span>ACUERDO 286</span>
-        </div>
-        <div class="program-body">
-            <div class="program-item">
-                <p>VALOR A PÚBLICO EN GENERAL</p>
-                <h3>$13,800.00</h3>
-            </div>
-            <div class="program-item">
-                <p>VALOR CONVENIO EN PARCIALIDADES</p>
-                <h3>$7,800.00</h3>
-            </div>
-            <div class="program-item highlight">
-                <p>BECA 50% EN UNA EXHIBICIÓN</p>
-                <h3>$6,900.00</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- LICENCIATURAS -->
-    <div class="program-card">
-        <div class="program-header gold">
-            <h4>LICENCIATURAS EJECUTIVAS</h4>
-            <span>PROGRAMAS FORMATIVOS</span>
-        </div>
-        <div class="program-body">
-            <div class="program-item">
-                <p>VALOR A PÚBLICO EN GENERAL</p>
-                <h3>$75,924.00</h3>
-            </div>
-            <div class="program-item">
-                <p>VALOR CONVENIO EN UNA EXHIBICIÓN</p>
-                <h3>$29,970.00</h3>
-            </div>
-            <div class="program-item highlight">
-                <p>BECA 50% EN PARCIALIDADES</p>
-                <h4>INSCRIPCIÓN: $999</h4>
-                <h4>REINSCRIPCIÓN CUATRIMESTRAL: $999</h4>
-                <h4>COLEGIATURA MENSUAL: $999</h4>
-                <h3>$37,962.00</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- BACHILLERATO INCLUSIVO -->
-    <div class="program-card">
-        <div class="program-header gold">
-            <h4>BACHILLERATO INCLUYENTE</h4>
-            <span>PROGRAMAS FORMATIVOS</span>
-        </div>
-        <div class="program-body">
-            <div class="program-item">
-                <p>VALOR A PÚBLICO EN GENERAL</p>
-                <h3>$29,940.00</h3>
-            </div>
-            <div class="program-item">
-                <p>VALOR CONVENIO EN UNA EXHIBICIÓN</p>
-                <h3>$11,976.00</h3>
-            </div>
-            <div class="program-item highlight">
-                <p>BECA 50% EN PARCIALIDADES</p>
-                <h4>INSCRIPCIÓN: $499</h4>
-                <h4>REINSCRIPCIÓN CUATRIMESTRAL: $499</h4>
-                <h4>COLEGIATURA MENSUAL: $499</h4>
-                <h3>$14,970.00</h3>
-            </div>
-        </div>
-    </div>
-
-    <!-- INGLÉS -->
-    <div class="program-card">
-        <div class="program-header blue">
-            <h4>ENGLISH EDUCATION FOR LIFE</h4>
-            <span>PROGRAMA DE INGLÉS</span>
-        </div>
-        <div class="program-body">
-            <div class="program-item">
-                <p>VALOR A PÚBLICO EN GENERAL</p>
-                <h3>$20,000.00</h3>
-            </div>
-            <div class="program-item">
-                <p>EN UNA EXHIBICIÓN</p>
-                <h3>$8,999.00</h3>
-            </div>
-            <div class="program-item highlight">
-                <p>BECA 50% PAGO EN PARCIALIDADES</p>
-                <h4>INSCRIPCIÓN: $1,500</h4>
-                <h4>COLEGIATURA MENSUAL: $2,100</h4>
-            </div>
-        </div>
-    </div>
-
-</div>
-    </div>
-</div>
-
-        <!-- 7. Identidad Institucional -->
-        <div id="identidad" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>7. Identidad Institucional</h2>
-                </div>
-                <span class="chevron">▲</span>
-            </div>
-            <div class="section-content">
-                <p style="margin-bottom: 20px; color: #666;">La estructura se sustenta en una alianza estratégica con
-                    roles específicos y complementarios:</p>
+        <!-- 3. IDENTIDAD INSTITUCIONAL -->
+        <div id="identidad-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-handshake"></i> 3. Identidad Institucional</h2>
+                <p style="margin-bottom:20px;">La estructura se sustenta en una alianza estratégica con roles específicos y complementarios:</p>
                 <div class="identity-container">
-                    <div class="identity-card" style="background-color: #f8faff;">
-                        <h3>Fundación Red Educativa Mexico</h3><span class="card-label">Enfoque:</span>
-                        <p class="card-text">Social y educativo</p><span class="card-label">Función Principal:</span>
-                        <p class="card-text">Difusión, vinculación y acompañamiento</p><span class="card-label">¿Qué SÍ
-                            hace?</span>
-                        <ul class="list-yes">
-                            <li>Promueve programas</li>
-                            <li>Genera alianzas</li>
-                            <li>Capta interesados</li>
-                            <li>Da seguimiento inicial</li>
-                        </ul><span class="card-label">¿Qué NO hace?</span>
-                        <ul class="list-no">
-                            <li>No imparte clases</li>
-                            <li>No certifica</li>
-                            <li>No evalúa</li>
-                        </ul>
-                        <div class="role-box"><strong>Rol en el Proceso:</strong><br>Primer contacto / Área comercial
-                        </div>
-                    </div>
-                    <div class="identity-card" style="background-color: #f9fff9;">
-                        <h3>IMPE (Universidad)</h3><span class="card-label">Enfoque:</span>
-                        <p class="card-text">Académico con reconocimiento oficial (RVOE)</p><span
-                            class="card-label">Función Principal:</span>
-                        <p class="card-text">Formación académica profesional</p><span class="card-label">¿Qué SÍ
-                            hace?</span>
-                        <ul class="list-yes">
-                            <li>Imparte bachillerato</li>
-                            <li>Ofrece licenciaturas</li>
-                            <li>Cursos y talleres</li>
-                            <li>Certificación de competencias</li>
-                        </ul><span class="card-label">¿Qué NO hace?</span>
-                        <ul class="list-no">
-                            <li>No evalúa en modelo 286</li>
-                            <li>No certifica en ese esquema</li>
-                        </ul>
-                        <div class="role-box"><strong>Rol en el Proceso:</strong><br>Parte académica / Formación</div>
-                    </div>
-                    <div class="identity-card" style="background-color: #fffaf5;">
-                        <h3>CONAIP</h3><span class="card-label">Enfoque:</span>
-                        <p class="card-text">Evaluación y certificación oficial</p><span class="card-label">Función
-                            Principal:</span>
-                        <p class="card-text">Evaluación de conocimientos y competencias</p><span class="card-label">¿Qué
-                            SÍ hace?</span>
-                        <ul class="list-yes">
-                            <li>Evalúa conocimientos</li>
-                            <li>Aplica exámenes</li>
-                            <li>Emite dictámenes (Acuerdo 286)</li>
-                            <li>Certifica oficialmente</li>
-                        </ul><span class="card-label">¿Qué NO hace?</span>
-                        <ul class="list-no">
-                            <li>No imparte clases</li>
-                            <li>No vende programas</li>
-                            <li>No avala cursos externos</li>
-                        </ul>
-                        <div class="role-box"><strong>Rol en el Proceso:</strong><br>Evaluación / Validación oficial
-                        </div>
-                    </div>
+                    <div class="identity-card" style="border-color:#0a2540;"><h3>Fundación REDMEX</h3><p><strong>Enfoque:</strong> Social y educativo<br><strong>Función:</strong> Difusión, vinculación<br><strong>¿Qué SÍ hace?</strong> Promueve programas, genera alianzas, capta interesados.<br><strong>¿Qué NO hace?</strong> No imparte clases, no certifica, no evalúa.</p><div style="background:#fcf6e5; padding:10px; border-radius:8px; margin-top:15px;"><strong>Rol:</strong> Primer contacto / Área comercial</div></div>
+                    <div class="identity-card" style="border-color:#2e7d32;"><h3>IMPE (Universidad)</h3><p><strong>Enfoque:</strong> Académico con RVOE<br><strong>Función:</strong> Formación académica profesional<br><strong>¿Qué SÍ hace?</strong> Imparte bachillerato, licenciaturas, cursos.<br><strong>¿Qué NO hace?</strong> No evalúa en modelo 286, no certifica en ese esquema.</p><div style="background:#fcf6e5; padding:10px; border-radius:8px; margin-top:15px;"><strong>Rol:</strong> Parte académica / Formación</div></div>
+                    <div class="identity-card" style="border-color:#b8860b;"><h3>CONAIP</h3><p><strong>Enfoque:</strong> Evaluación y certificación oficial<br><strong>Función:</strong> Evaluación de conocimientos<br><strong>¿Qué SÍ hace?</strong> Evalúa, aplica exámenes, emite dictámenes (Acuerdo 286), certifica.<br><strong>¿Qué NO hace?</strong> No imparte clases, no vende programas.</p><div style="background:#fcf6e5; padding:10px; border-radius:8px; margin-top:15px;"><strong>Rol:</strong> Evaluación / Validación oficial</div></div>
                 </div>
             </div>
         </div>
 
-        <!-- 8. Material de Apoyo (Mapeo) -->
-        <div id="material" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>8. Definición de roles y alcances operativos</h2>
-                </div>
-                <span class="chevron">▼</span>
+        <!-- 4. DEFINICIÓN DE ROLES Y ALCANCES -->
+        <div id="mapeo-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-sitemap"></i> 4. Definición de roles y alcances operativos</h2>
+                <div class="mapeo-container"><div class="mapeo-wrapper"><div class="mapeo-inner"><div class="flow-row"><div class="column"><div class="header h-blue">Difusión y Vinculación</div><div class="responsable-label">Responsable:</div><div class="responsable-val">Enlace institucional</div><div class="bubble-list"><div class="bubble b-blue">Difusión de programas</div><div class="bubble b-blue">Generación de prospectos</div><div class="bubble b-blue">Relaciones institucionales</div></div></div><div class="column"><div class="header h-green">Proceso Comercial (Ventas)</div><div class="responsable-label">Responsables:</div><div class="responsable-val">Lead Junior / Senior</div><div class="bubble-list"><div class="bubble b-green">Contacto inicial</div><div class="bubble b-green">Seguimiento y asesoría</div><div class="bubble b-green">Cierre de inscripción</div><div class="bubble b-green">Supervisión de KPIs</div><div class="bubble b-green">Atención a quejas iniciales</div></div></div><div class="column"><div class="header h-navy">Formación Académica</div><div class="responsable-label">Responsable:</div><div class="responsable-val">IMPE</div><div class="bubble-list"><div class="bubble b-navy">Impartición de clases</div><div class="bubble b-navy">Desarrollo de programas</div><div class="bubble b-navy">Seguimiento académico</div></div></div><div class="column"><div class="header h-purple">Evaluación y Certificación</div><div class="responsable-label">Responsable:</div><div class="responsable-val">CONAIP</div><div class="bubble-list"><div class="bubble b-purple">Evaluación de conocimientos</div><div class="bubble b-purple">Certificación (Acuerdo 286)</div><div class="bubble b-purple">Evaluación de competencias</div></div></div><div class="column"><div class="header h-red">Acompañamiento y Experiencia</div><div class="responsable-label">Responsable:</div><div class="responsable-val" style="font-size:10px;">Jefe de Operaciones, Team Leader Comercial...</div><div class="bubble-list"><div class="bubble b-red">Orientación inicial</div><div class="bubble b-red">Experiencia del alumno</div><div class="bubble b-red">Canalización de problemas</div></div></div></div><div class="scope-row"><div class="table-container"><div class="t-head bg-blue">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Promocionar, generar interés, convenios.</div><div class="t-body">Explicar a detalle, seguimiento, cerrar ventas.</div></div><div class="table-container"><div class="t-head bg-green">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Llamadas, explicar programas, cerrar inscripción...</div><div class="t-body">Cerrar casos complejos, validar estudios.</div></div><div class="table-container"><div class="t-head bg-navy">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Enseñar, diseñar planes, acompañar alumno.</div><div class="t-body">Certificar oficialmente, evaluar por Acuerdo 286.</div></div><div class="table-container"><div class="t-head bg-purple">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Aplicar exámenes, emitir dictamen, certificar.</div><div class="t-body">Dar clases, vender programas.</div></div><div class="table-container"><div class="t-head bg-red">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Canalizar correctamente, dirigir al área correcta.</div><div class="t-body">Resolver procesos completos, certificar.</div></div></div></div></div></div>
             </div>
-            <div class="section-content">
-                <div class="mapeo-container">
-                    <div class="mapeo-wrapper">
-                        <div class="mapeo-inner">
-                            <div class="flow-row">
-                                <div class="column">
-                                    <div class="header h-blue">Difusión y Vinculación</div>
-                                    <div class="responsable-label">Responsable:</div>
-                                    <div class="responsable-val">Enlace institucional</div>
-                                    <div class="bubble-list">
-                                        <div class="bubble b-blue">Difusión de programas</div>
-                                        <div class="bubble b-blue">Generación de prospectos</div>
-                                        <div class="bubble b-blue">Relaciones institucionales</div>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="header h-green">2 Proceso Comercial (Ventas)</div>
-                                    <div class="responsable-label">Responsables:</div>
-                                    <div class="responsable-val">Lead Junior / Senior</div>
-                                    <div class="bubble-list">
-                                        <div class="bubble b-green">Contacto inicial</div>
-                                        <div class="bubble b-green">Seguimiento y asesoría</div>
-                                        <div class="bubble b-green">Cierre de inscripción</div>
-                                        <div class="bubble b-green">Supervisión de KPIs</div>
-                                        <div class="bubble b-green">Atención a quejas iniciales</div>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="header h-navy">Formación Académica</div>
-                                    <div class="responsable-label">Responsable:</div>
-                                    <div class="responsable-val">IMPE</div>
-                                    <div class="bubble-list">
-                                        <div class="bubble b-navy">Impartición de clases</div>
-                                        <div class="bubble b-navy">Desarrollo de programas</div>
-                                        <div class="bubble b-navy">Seguimiento académico</div>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="header h-purple">Evaluación y Certificación</div>
-                                    <div class="responsable-label">Responsable:</div>
-                                    <div class="responsable-val">CONAIP</div>
-                                    <div class="bubble-list">
-                                        <div class="bubble b-purple">Evaluación de conocimientos</div>
-                                        <div class="bubble b-purple">Certificación (Acuerdo 286)</div>
-                                        <div class="bubble b-purple">Evaluación de competencias</div>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="header h-red">Acompañamiento y Experiencia</div>
-                                    <div class="responsable-label">Responsable:</div>
-                                    <div class="responsable-val" style="font-size: 10px;">Jefe de Operaciones, Team
-                                        Leader Comercial...</div>
-                                    <div class="bubble-list">
-                                        <div class="bubble b-red">Orientación inicial</div>
-                                        <div class="bubble b-red">Experiencia del alumno</div>
-                                        <div class="bubble b-red">Canalización de problemas</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="scope-row">
-                                <div class="table-container">
-                                    <div class="t-head bg-blue">Alcance</div>
-                                    <div class="t-head bg-light-gray">No Corresponde</div>
-                                    <div class="t-body">Promocionar, generar interés, convenios.</div>
-                                    <div class="t-body">Explicar a detalle, seguimiento, cerrar ventas.</div>
-                                </div>
-                                <div class="table-container">
-                                    <div class="t-head bg-green">Alcance</div>
-                                    <div class="t-head bg-light-gray">No Corresponde</div>
-                                    <div class="t-body">Llamadas, explicar programas, cerrar inscripción...</div>
-                                    <div class="t-body">Cerrar casos complejos, validar estudios, temas académicos.
-                                    </div>
-                                </div>
-                                <div class="table-container">
-                                    <div class="t-head bg-navy">Alcance</div>
-                                    <div class="t-head bg-light-gray">No Corresponde</div>
-                                    <div class="t-body">Enseñar, diseñar planes, acompañar alumno.</div>
-                                    <div class="t-body">Certificar oficialmente, evaluar por Acuerdo 286.</div>
-                                </div>
-                                <div class="table-container">
-                                    <div class="t-head bg-purple">Alcance</div>
-                                    <div class="t-head bg-light-gray">No Corresponde</div>
-                                    <div class="t-body">Aplicar exámenes, emitir dictamen, certificar.</div>
-                                    <div class="t-body">Dar clases, vender programas, hacer difusión.</div>
-                                </div>
-                                <div class="table-container">
-                                    <div class="t-head bg-red">Alcance</div>
-                                    <div class="t-head bg-light-gray">No Corresponde</div>
-                                    <div class="t-body">Canalizar correctamente, dirigir al área correcta.</div>
-                                    <div class="t-body">Resolver procesos completos, certificar.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+
+        <!-- 5. ACTIVIDADES (con imagen 16:9) -->
+        <div id="actividades-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-calendar-alt"></i> 5. Actividades Realizadas</h2>
+
+                <div class="actividades-grid-extendida">
+                    <div class="actividad-block"><h3><i class="fas fa-users"></i> Simulaciones tipo Role Play</h3><ul><li>Simulación de reunión en territorio (presentación institucional completa)</li><li>Cambio de roles (asesor / prospecto / enlace institucional)</li><li>Simulación de llamada inicial</li><li>Simulación de cierre de inscripción</li><li>Simulación de manejo de objeciones en vivo</li></ul></div>
+                    <div class="actividad-block"><h3><i class="fas fa-brain"></i> Reformulación de información</h3><ul><li>Explicación del Acuerdo 286 con palabras propias</li><li>Cambio de fichas informativas (explicar lo mismo con diferente lenguaje)</li><li>Traducción de lenguaje técnico a lenguaje sencillo</li><li>Ejercicio “explícaselo a alguien sin estudios”</li><li>Reformulación por tipo de perfil (prospecto vs enlace)</li></ul></div>
+                    <div class="actividad-block"><h3><i class="fas fa-comment-slash"></i> Eliminación de muletillas</h3><ul><li>Dinámica de interrupción consciente (te paran cuando dices muletillas)</li><li>Exposición con observador asignado</li><li>Repetición corregida del discurso</li><li>Conteo de muletillas por compañero</li><li>Ejercicio de hablar con pausas controladas</li></ul></div>
+                    <div class="actividad-block"><h3><i class="fas fa-person-walking"></i> Postura y lenguaje corporal</h3><ul><li>Presentación frente a grupo</li><li>Simulación de reunión formal</li><li>Corrección de postura en exposición</li><li>Ejercicio de contacto visual dirigido</li><li>Control de manos y movimientos</li></ul></div>
+                    <div class="actividad-block"><h3><i class="fas fa-shield-haltered"></i> Manejo de objeciones</h3><ul><li>Juego de objeciones rápidas (pregunta-respuesta inmediata)</li><li>Simulación con objeciones reales (costo, tiempo, validez)</li><li>Debate de respuestas (qué contestar y cómo)</li><li>Construcción de respuestas en equipo</li><li>Role play con objeciones difíciles</li></ul></div>
+                    <div class="actividad-block"><h3><i class="fas fa-handshake"></i> Cierre de venta</h3><ul><li>Simulación de cierre con opciones</li><li>Ejercicio de cierre directo</li><li>Cierre con urgencia</li><li>Cierre guiado paso a paso</li><li>Práctica de cierre con retroalimentación</li></ul></div>
+                    <div class="actividad-block"><h3><i class="fas fa-magnifying-glass"></i> Detección de necesidades</h3><ul><li>Ronda de preguntas clave</li><li>Simulación de entrevista al prospecto</li><li>Identificación de perfil (qué necesita)</li><li>Ejercicio “descubre el objetivo del cliente”</li><li>Análisis de casos reales</li></ul></div>
+                </div>
+                <div style="background:#eef3fa; border-radius:24px; padding:2rem; margin-top:30px;"><h3>Impacto de las Actividades</h3><p>Las actividades realizadas permitieron que el equipo desarrollara competencias clave para la excelencia en la atención al cliente y la promoción efectiva de los programas educativos de REDMEX.</p><div class="metrics-group" style="margin-top:20px;"><div><h2>100%</h2><span>Participación</span></div><div><h2>Alto</h2><span>Compromiso</span></div><div><h2>Mejora</h2><span>Progresiva</span></div></div></div>
+            </div>
+        </div>
+
+        <!-- 6. HABILIDADES -->
+        <div id="habilidades-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-chart-line"></i> 6. Desarrollo de Habilidades</h2>
+                <div class="grid-responsive-2">
+                    <div style="background:#f8faff; padding:1.5rem; border-radius:20px;"><strong>Comunicación</strong><br><span style="color:#c62828;">✗ Discurso poco estructurado</span><br><span style="color:#2e7d32;">✓ Discurso claro, ordenado y adaptable</span></div>
+                    <div style="background:#f8faff; padding:1.5rem; border-radius:20px;"><strong>Seguridad</strong><br><span style="color:#c62828;">✗ Nerviosismo y dudas</span><br><span style="color:#2e7d32;">✓ Mayor seguridad y fluidez</span></div>
+                    <div style="background:#f8faff; padding:1.5rem; border-radius:20px;"><strong>Información</strong><br><span style="color:#c62828;">✗ Conocimiento limitado</span><br><span style="color:#2e7d32;">✓ Dominio integral de programas</span></div>
+                    <div style="background:#f8faff; padding:1.5rem; border-radius:20px;"><strong>Objeciones</strong><br><span style="color:#c62828;">✗ Respuestas improvisadas</span><br><span style="color:#2e7d32;">✓ Respuestas estructuradas</span></div>
                 </div>
             </div>
         </div>
 
-        <!-- 9. Actividades Realizadas -->
-        <div id="actividades" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>9. Actividades Realizadas</h2>
-                </div>
-                <span class="chevron">▼</span>
-            </div>
-            <div class="section-content">
-                <div class="actividades-hero"></div>
-                <div class="actividades-grid">
-                    <div class="actividad-card">
-                        <h3>Simulaciones tipo Role Play</h3>
-                        <p>Ejercicios individuales donde los participantes simularon reuniones presenciales en
-                            territorio, practicando la presentación de programas educativos y manejo de objeciones.</p>
-                        <ul>
-                            <li>Práctica en tiempo real</li>
-                            <li>Feedback inmediato</li>
-                            <li>Escenarios variados</li>
-                        </ul>
-                    </div>
-                    <div class="actividad-card">
-                        <h3>Ejercicios de Reformulación</h3>
-                        <p>Dinámicas enfocadas en la explicación del Acuerdo 286 con lenguaje propio, asegurando que
-                            cada participante internalizara los conceptos clave.</p>
-                        <ul>
-                            <li>Dominio de conceptos</li>
-                            <li>Lenguaje accesible</li>
-                            <li>Claridad comunicativa</li>
-                        </ul>
-                    </div>
-                    <div class="actividad-card">
-                        <h3>Eliminación de Muletillas</h3>
-                        <p>Ejercicios específicos de detección y corrección de vicios del habla, mejorando la calidad y
-                            profesionalismo del discurso.</p>
-                        <ul>
-                            <li>Detección de patrones</li>
-                            <li>Corrección progresiva</li>
-                            <li>Mejora continua</li>
-                        </ul>
-                    </div>
-                    <div class="actividad-card">
-                        <h3>Postura y Lenguaje Corporal</h3>
-                        <p>Alineación del lenguaje no verbal con el discurso institucional, reforzando la imagen
-                            profesional y la credibilidad del equipo.</p>
-                        <ul>
-                            <li>Presencia profesional</li>
-                            <li>Comunicación no verbal</li>
-                            <li>Impacto visual</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="impacto-box">
-                    <h3>Impacto de las Actividades</h3>
-                    <p>Las actividades realizadas permitieron que el equipo desarrollara competencias clave para la
-                        excelencia en la atención al cliente y la promoción efectiva de los programas educativos de
-                        REDMEX.</p>
-                    <div class="impacto-metricas">
-                        <div>
-                            <h2>100%</h2><span>Participación</span>
-                        </div>
-                        <div>
-                            <h2>Alto</h2><span>Compromiso</span>
-                        </div>
-                        <div>
-                            <h2>Mejora</h2><span>Progresiva</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 10. Desarrollo de Habilidades -->
-        <div id="habilidades" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>10. Desarrollo de Habilidades</h2>
-                </div>
-                <span class="chevron">▼</span>
-            </div>
-            <div class="section-content">
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Comunicación</h3>
-                        <p class="bad">✗ Discurso poco estructurado</p>
-                        <p class="good">✓ Discurso claro, ordenado y adaptable</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Seguridad</h3>
-                        <p class="bad">✗ Nerviosismo y dudas</p>
-                        <p class="good">✓ Mayor seguridad y fluidez</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Información</h3>
-                        <p class="bad">✗ Conocimiento limitado</p>
-                        <p class="good">✓ Dominio integral de programas</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Objeciones</h3>
-                        <p class="bad">✗ Respuestas improvisadas</p>
-                        <p class="good">✓ Respuestas estructuradas</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 11. Evaluación y Resultados -->
-        <div id="evaluacion" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>11. Evaluación y Resultados</h2>
-                </div>
-                <span class="chevron">▼</span>
-            </div>
-            <div class="section-content">
-                <p>Para asegurar la correcta aplicación de conocimientos, se establece un modelo enfocado en la medición
-                    del desempeño y la consolidación del discurso institucional en escenarios reales.</p>
+        <!-- 7. EVALUACIÓN -->
+        <div id="evaluacion-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-clipboard-list"></i> 7. Evaluación y Resultados</h2>
+                <p>Para asegurar la correcta aplicación de conocimientos, se establece un modelo enfocado en la medición del desempeño y la consolidación del discurso institucional en escenarios reales.</p>
                 <h3>Criterios de Evaluación</h3>
-                <div class="eval-container">
-                    <div class="eval-box">
-                        <h4>1. Conocimiento</h4>
-                        <ul>
-                            <li>Dominio de la ficha técnica institucional</li>
-                            <li>Comprensión del Acuerdo 286</li>
-                            <li>Claridad en la explicación de la oferta educativa</li>
-                        </ul>
-                    </div>
-                    <div class="eval-box">
-                        <h4>2. Desempeño</h4>
-                        <ul>
-                            <li>Estructura del discurso</li>
-                            <li>Capacidad de detección de necesidades</li>
-                            <li>Manejo de objeciones y técnicas de cierre</li>
-                        </ul>
-                    </div>
-                    <div class="eval-box">
-                        <h4>3. Actitud</h4>
-                        <ul>
-                            <li>Seguridad al comunicar y proactividad</li>
-                            <li>Disposición al aprendizaje</li>
-                            <li>Alineación con valores institucionales</li>
-                        </ul>
-                    </div>
+                <div class="grid-responsive-3">
+                    <div style="background:white; padding:1.5rem; border-radius:20px;"><h4>Conocimiento</h4><ul><li>Dominio ficha técnica</li><li>Comprensión Acuerdo 286</li><li>Claridad oferta educativa</li></ul></div>
+                    <div style="background:white; padding:1.5rem; border-radius:20px;"><h4>Desempeño</h4><ul><li>Estructura del discurso</li><li>Detección de necesidades</li><li>Manejo de objeciones</li></ul></div>
+                    <div style="background:white; padding:1.5rem; border-radius:20px;"><h4>Actitud</h4><ul><li>Seguridad al comunicar</li><li>Disposición al aprendizaje</li><li>Alineación valores</li></ul></div>
                 </div>
-                <div class="kpi-container">
-                    <h4 style="margin-top:0; color:#1d3a5f;">Indicadores de Éxito (KPIs)</h4>
-                    <div class="kpi-grid">
-                        <div class="kpi-item">📈 Reducción de muletillas</div>
-                        <div class="kpi-item">📈 Claridad y orden del discurso</div>
-                        <div class="kpi-item">📈 Tiempo de respuesta a objeciones</div>
-                        <div class="kpi-item">📈 Efectividad de cierres</div>
-                        <div class="kpi-item">📈 Adaptación según perfil</div>
-                    </div>
-                </div>
-                <div class="resultado-box" style="margin-top:20px;">
-                    <h3>Resultados Esperados</h3>
-                    <p>Consolidación del discurso profesional, mayor seguridad en la comunicación y estandarización del
-                        nivel de desempeño en todos los participantes.</p>
-                </div>
+                <div style="background:#e6f2ff; padding:1.5rem; border-radius:20px; margin:20px 0;"><h4>Indicadores de Éxito (KPIs)</h4><div style="display:flex; flex-wrap:wrap; gap:20px;">📈 Reducción de muletillas · 📈 Claridad y orden · 📈 Tiempo de respuesta · 📈 Efectividad de cierres</div></div>
+                <div style="background:#e8f5e9; padding:1.5rem; border-radius:20px;"><h3>Resultados Esperados</h3><p>Consolidación del discurso profesional, mayor seguridad en la comunicación y estandarización del nivel de desempeño en todos los participantes.</p></div>
             </div>
         </div>
 
-        <!-- 12. Seguimiento -->
-<div id="seguimiento" class="section">
-    <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-header-title">
-            <h2>12. Seguimientos y Próximas Etapas</h2>
-        </div>
-        <span class="chevron">▼</span>
-    </div>
-    <div class="section-content">
-        <p>El seguimiento se realiza mediante actividades integradas a la operación diaria para evaluar el desempeño en tiempo real.</p>
-        
-
-
-        <!-- Botones para acceder a los drives por área -->
-        <h3>Acceso a Recursos por Área</h3>
-        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px;">
-            <button class="drive-btn" data-area="enlace" style="background-color: #001f3f; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">📁 Área de Enlace - Drive</button>
-            <button class="drive-btn" data-area="comercial" style="background-color: #001f3f; color: white; border: none; padding: 10px 20px; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">📁 Área Comercial - Drive</button>
-        </div>
-        <div class="tools-tag-container" style="margin-top: -10px; margin-bottom: 20px;">
-            <span class="tool-tag">⚠️ Los enlaces a Drive serán agregados próximamente.</span>
+        <!-- 8. SEGUIMIENTO -->
+        <div id="seguimiento-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-arrows-spin"></i> 8. Seguimientos y Próximas Etapas</h2>
+                <p>El seguimiento se realiza mediante actividades integradas a la operación diaria para evaluar el desempeño en tiempo real.</p>
+                <h3>Acceso a Recursos por Área</h3>
+                <div class="drive-buttons"><button class="drive-btn" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px;"><i class="fas fa-folder"></i> Área de Enlace - Drive</button><button class="drive-btn" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px;"><i class="fas fa-folder"></i> Área Comercial - Drive</button></div>
+                <p style="color:#64748b;">⚠️ Los enlaces a Drive serán agregados próximamente.</p>
+                <h3>Estrategia de Seguimiento Operativo</h3>
+                <div class="grid-responsive-2"><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Eliminación de muletillas:</strong> Sesiones breves.</div><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Simulaciones en piso:</strong> Role-play real.</div><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Resolución en tiempo real:</strong> Soporte operativo.</div><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Práctica supervisada:</strong> Refuerzo continuo.</div></div>
+                <h3>Herramientas de Evaluación</h3>
+                <div style="display:flex; flex-wrap:wrap; gap:10px;"><span style="background:#e9ecef; padding:8px 16px; border-radius:40px;">Observación directa</span><span style="background:#e9ecef; padding:8px 16px; border-radius:40px;">Google Forms</span><span style="background:#e9ecef; padding:8px 16px; border-radius:40px;">Checklists</span><span style="background:#e9ecef; padding:8px 16px; border-radius:40px;">Evaluaciones prácticas</span></div>
+                <div style="background:#e5e7eb; padding:20px; border-radius:20px; margin-top:20px;"><h3>Calendario de capacitaciones</h3><p>✅ 6 de abril, 2026 - Capacitación especializada para área de ventas</p><p>✅ 9 de abril, 2026 - Segundo módulo del programa institucional</p><p>⏳ -- de ----, 2026 - Esté atento a la próxima capacitación</p></div>
+            </div>
         </div>
 
-        <h3>Estrategia de Seguimiento Operativo</h3>
-        <div class="seguimiento-grid">
-            <div class="eval-card" style="border-left: 4px solid #27ae60;"><strong>Eliminación de muletillas:</strong> Sesiones breves de fluidez.</div>
-            <div class="eval-card" style="border-left: 4px solid #27ae60;"><strong>Simulaciones en piso:</strong> Role-play en entornos reales.</div>
-            <div class="eval-card" style="border-left: 4px solid #27ae60;"><strong>Resolución en tiempo real:</strong> Soporte durante la operación.</div>
-            <div class="eval-card" style="border-left: 4px solid #27ae60;"><strong>Práctica supervisada:</strong> Refuerzo continuo del discurso.</div>
+        <!-- 9. ANEXOS -->
+        <div id="anexos-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-paperclip"></i> 9. Anexos</h2>
+                <p>El programa se apoyó en la creación y adaptación de recursos didácticos diseñados específicamente para facilitar la comprensión, práctica y dominio del modelo de trabajo institucional.</p>
+                <div style="margin-top:20px;"><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Fichas Técnicas Institucionales</strong> - Documentos estructurados con información clave.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Mapeos Institucionales</strong> - Ejercicios de investigación y análisis.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Guía de Apoyo (Cuadro Comparativo)</strong> - Diferencias entre REDMEX, IMPE y CONAIP.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Ejercicios Prácticos</strong> - Actividades para reforzar misión, visión y oferta.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Simulaciones y Casos</strong> - Escenarios basados en situaciones reales.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Material Audiovisual</strong> - Videos de técnicas de comunicación y negociación.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Evaluaciones</strong> - Formularios físicos y digitales de seguimiento.</div><a href="https://drive.google.com/drive/folders/1B4PA8IWkpJohfNbewXMzWEQX6JuD6mvY?usp=drive_link" target="_blank" style="display:block; background:#eef3ff; padding:1.2rem 1.8rem; border-radius:50px; text-decoration:none; color:inherit; border:1px solid var(--primary);"><i class="fas fa-folder-open"></i> <strong>Repositorio Digital</strong> - Carpeta compartida con acceso continuo a materiales. <span style="font-weight:bold; text-decoration:underline;">Click para abrir Google Drive</span></a></div>
+            </div>
         </div>
 
-        <h3>Herramientas de Evaluación</h3>
-        <div class="tools-tag-container">
-            <span class="tool-tag">Observación directa</span>
-            <span class="tool-tag">Google Forms</span>
-            <span class="tool-tag">Checklists de desempeño</span>
-            <span class="tool-tag">Evaluaciones prácticas</span>
-            <span class="tool-tag">Feedback instantáneo</span>
-        </div>
-
-        <!-- Mantenemos el calendario original pero ahora ya está integrado en el checklist, aunque lo dejamos como referencia -->
-        <div class="calendario-box" style="margin-top:30px;">
-            <h3>calendario de capacitaciones</h3>
-            <p><span style="font-size: 1.2rem;">✅</span><strong>6 de abril, 2026</strong><br>Capacitación especializada para área de ventas</p>
-            <p><span style="font-size: 1.2rem;">✅</span><strong>9 de abril, 2026</strong><br>Segundo módulo del programa institucional</p>
-            <p><span style="font-size: 1.2rem;">⏳</span><strong> -- de ----, 2026 </strong><br>Esta atento a la proxima capacitacion</p>
-
+        <div class="app-footer">
+            <p>Manual de Capacitación Institucional | Abril, 2026</p>
         </div>
     </div>
-</div>
-
-        <!-- 13. Anexos -->
-        <div id="anexos" class="section">
-            <div class="section-header" onclick="toggleSection(this)">
-                <div class="section-header-title">
-                    <h2>13. Anexos</h2>
-                </div>
-                <span class="chevron">▼</span>
-            </div>
-            <div class="section-content">
-                <p>El programa se apoyó en la creación y adaptación de recursos didácticos diseñados específicamente
-                    para facilitar la comprensión, práctica y dominio del modelo de trabajo institucional.</p>
-
-                <div class="anexos-lista">
-                    <div class="anexo-item"><strong>Fichas Técnicas Institucionales</strong>
-                        <p>Documentos estructurados con información clave de la Fundación</p>
-                    </div>
-                    <div class="anexo-item"><strong>Mapeos Institucionales</strong>
-                        <p>Ejercicios de investigación y análisis de dependencias</p>
-                    </div>
-                    <div class="anexo-item"><strong>Guía de Apoyo (Cuadro Comparativo)</strong>
-                        <p>Diferencias entre REDMEX, IMPE y CONAIP</p>
-                    </div>
-                    <div class="anexo-item"><strong>Ejercicios Prácticos</strong>
-                        <p>Actividades para reforzar misión, visión y oferta educativa</p>
-                    </div>
-                    <div class="anexo-item"><strong>Simulaciones y Casos</strong>
-                        <p>Escenarios basados en situaciones reales</p>
-                    </div>
-                    <div class="anexo-item"><strong>Material Audiovisual</strong>
-                        <p>Videos de técnicas de comunicación y negociación</p>
-                    </div>
-                    <div class="anexo-item"><strong>Evaluaciones</strong>
-                        <p>Formularios físicos y digitales de seguimiento</p>
-                    </div>
-
-                    <a href="https://drive.google.com/drive/folders/1B4PA8IWkpJohfNbewXMzWEQX6JuD6mvY?usp=drive_link"
-                        target="_blank" class="anexo-item repo-btn">
-                        <strong> Repositorio Digital</strong>
-                        <p>Carpeta compartida con acceso continuo a materiales.</p>
-                        <span class="repo-link-text">Click para abrir Google Drive</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>Manual de Capacitación Institucional | Abril, 2026</p>
-    </footer>
 
     <script>
-        function toggleSection(header) {
+        const navItems = document.querySelectorAll('.nav-item');
+        const views = document.querySelectorAll('.section-view');
+        const dashboardView = document.getElementById('dashboard-view');
+
+        function switchView(viewId) {
+            navItems.forEach(item => item.classList.remove('active'));
+            const activeItem = document.querySelector(`.nav-item[data-view="${viewId}"]`);
+            if (activeItem) activeItem.classList.add('active');
+
+            views.forEach(v => v.classList.remove('active'));
+            if (viewId === 'dashboard') {
+                dashboardView.classList.add('active');
+            } else {
+                const targetView = document.getElementById(viewId + '-view');
+                if (targetView) targetView.classList.add('active');
+            }
+        }
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                switchView(item.dataset.view);
+            });
+        });
+
+        window.switchView = switchView;
+
+        window.toggleSubsection = function (header) {
             const content = header.nextElementSibling;
-            const chevron = header.querySelector('.chevron');
-            // Cerrar otras secciones abiertas
-            document.querySelectorAll('.section-content.open').forEach(open => {
-                if (open !== content) {
-                    open.classList.remove('open');
-                    open.previousElementSibling.querySelector('.chevron').classList.remove('open');
-                }
-            });
+            const icon = header.querySelector('i');
             content.classList.toggle('open');
-            chevron.classList.toggle('open');
-        }
+            if (icon) icon.style.transform = content.classList.contains('open') ? 'rotate(180deg)' : '';
+        };
 
-        function toggleSubsection(subHeader) {
-            const content = subHeader.nextElementSibling;
-            const chevron = subHeader.querySelector('.chevron');
-            content.classList.toggle('open');
-            chevron.classList.toggle('open');
-        }
-
-        function openSectionById(sectionId) {
-            const targetSection = document.getElementById(sectionId);
-            if (!targetSection) return;
-            // Scroll suave hacia la sección
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            // Obtener el header y el content de esa sección
-            const sectionHeader = targetSection.querySelector('.section-header');
-            const sectionContent = targetSection.querySelector('.section-content');
-            if (sectionContent && !sectionContent.classList.contains('open')) {
-                // Cerrar todas las demás secciones abiertas
-                document.querySelectorAll('.section-content.open').forEach(open => {
-                    open.classList.remove('open');
-                    open.previousElementSibling.querySelector('.chevron').classList.remove('open');
-                });
-                sectionContent.classList.add('open');
-                const chevron = sectionHeader.querySelector('.chevron');
-                if (chevron) chevron.classList.add('open');
-            }
-        }
-
-        // Asignar evento a cada enlace de la tabla de contenidos
-        document.querySelectorAll('.toc-link').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const sectionId = this.getAttribute('data-section');
-                if (sectionId) openSectionById(sectionId);
-            });
+        document.querySelectorAll('.drive-btn').forEach(btn => {
+            btn.addEventListener('click', () => alert('Enlace al Drive será agregado próximamente.'));
         });
-
-        // Abrir la primera sección (Introducción) al cargar
-        document.addEventListener('DOMContentLoaded', function () {
-            // Asegurar que la introducción esté abierta
-            const introContent = document.querySelector('#intro .section-content');
-            if (introContent && !introContent.classList.contains('open')) {
-                introContent.classList.add('open');
-                const introChevron = document.querySelector('#intro .chevron');
-                if (introChevron) introChevron.classList.add('open');
-            }
-        });
-
-        // Botones de Drive (pendientes de enlaces reales)
-document.querySelectorAll('.drive-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const area = this.getAttribute('data-area');
-        alert(`🔗 Enlace al Drive del área ${area === 'enlace' ? 'de Enlace' : 'Comercial'} pendiente de agregar. Próximamente disponible.`);
-        // Cuando tengas las URLs, reemplaza el alert con:
-        // if (area === 'enlace') window.open('URL_DRIVE_ENLACE', '_blank');
-        // else window.open('URL_DRIVE_COMERCIAL', '_blank');
-    });
-});
+        document.querySelectorAll('.subsection-content').forEach(c => c.classList.remove('open'));
     </script>
 </body>
 
