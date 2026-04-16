@@ -328,8 +328,8 @@
             margin-bottom: 28px;
         }
         .actividades-imagen img {
-            max-width: 400px;      /* Controla el tamaño máximo */
-    width: 100%;
+            max-width: 400px;
+            width: 100%;
             height: auto;
             border-radius: 16px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -337,7 +337,7 @@
             object-fit: cover;
         }
 
-        /* Mapeo (punto 8) - ÍNTEGRO */
+        /* Mapeo */
         .mapeo-container {
             margin: 20px 0;
             overflow-x: auto;
@@ -486,7 +486,7 @@
             background: #fdfdfd;
         }
 
-        /* Programas (valores) - ÍNTEGRO */
+        /* Programas (valores) */
         .program-card {
             margin-bottom: 25px;
             border-radius: 20px;
@@ -537,7 +537,7 @@
             color: #b8860b;
         }
 
-        /* Oferta educativa - tarjetas completas */
+        /* Oferta educativa */
         .oferta-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -601,7 +601,7 @@
             border-top: 6px solid;
         }
 
-        /* Actividades (NUEVA VERSIÓN DETALLADA) */
+        /* Actividades */
         .actividades-grid-extendida {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -823,15 +823,16 @@
         <ul class="nav-menu">
             <li class="nav-item active" data-view="dashboard"><i class="fas fa-th-large"></i> Dashboard</li>
             <li class="nav-item" data-view="intro"><i class="fas fa-door-open"></i> 1. Introducción</li>
+            <li class="nav-item" data-view="info"><i class="fas fa-building"></i> 2. Información Institucional</li>
             <li class="nav-item" data-view="modulos"><i class="fas fa-layer-group"></i> Módulos de Capacitación</li>
-            <li class="nav-item" data-view="oferta"><i class="fas fa-graduation-cap"></i> 2. Oferta Educativa</li>
-            <li class="nav-item" data-view="identidad"><i class="fas fa-handshake"></i> 3. Identidad Institucional</li>
-            <li class="nav-item" data-view="mapeo"><i class="fas fa-sitemap"></i> 4. Definición de roles</li>
-            <li class="nav-item" data-view="actividades"><i class="fas fa-calendar-alt"></i> 5. Actividades</li>
-            <li class="nav-item" data-view="habilidades"><i class="fas fa-chart-line"></i> 6. Habilidades</li>
-            <li class="nav-item" data-view="evaluacion"><i class="fas fa-clipboard-list"></i> 7. Evaluación</li>
-            <li class="nav-item" data-view="seguimiento"><i class="fas fa-arrows-spin"></i> 8. Seguimiento</li>
-            <li class="nav-item" data-view="anexos"><i class="fas fa-paperclip"></i> 9. Anexos</li>
+            <li class="nav-item" data-view="oferta"><i class="fas fa-graduation-cap"></i> 3. Oferta Educativa</li>
+            <li class="nav-item" data-view="identidad"><i class="fas fa-handshake"></i> 4. Identidad Institucional</li>
+            <li class="nav-item" data-view="mapeo"><i class="fas fa-sitemap"></i> 5. Definición de roles</li>
+            <li class="nav-item" data-view="actividades"><i class="fas fa-calendar-alt"></i> 6. Actividades</li>
+            <li class="nav-item" data-view="habilidades"><i class="fas fa-chart-line"></i> 7. Habilidades</li>
+            <li class="nav-item" data-view="evaluacion"><i class="fas fa-clipboard-list"></i> 8. Evaluación</li>
+            <li class="nav-item" data-view="seguimiento"><i class="fas fa-arrows-spin"></i> 9. Seguimiento</li>
+            <li class="nav-item" data-view="anexos"><i class="fas fa-paperclip"></i> 10. Anexos</li>
         </ul>
         <div style="margin-top: auto; padding: 20px 0; color: #64748b; font-size: 0.8rem;">
             <i class="fas fa-shield"></i> Fundación REDMEX
@@ -840,70 +841,60 @@
 
     <!-- PANEL PRINCIPAL -->
     <div class="main-panel">
-<!-- DASHBOARD - Logos grandes con estilo hero -->
-<!-- DASHBOARD - Logos grandes con estilo hero (centrados) -->
-<div id="dashboard-view" class="section-view active">
-    <!-- Hero con logos centrados -->
-    <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 32px; padding: 40px 20px; margin-bottom: 40px; text-align: center; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);">
-        <div class="logo-medio" style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
-            <!-- Logo REDMEX -->
-            <div>
-                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663514551788/kCthg2DGRm6NuVQAqaMAg5/pasted_file_iFHJ7y_Logofundación_Mesadetrabajo1copia2_fba7c4ae.png" 
-                     alt="REDMEX" style="max-height: 200px; width: auto; filter: brightness(0) invert(1); object-fit: contain;">
+        <!-- DASHBOARD -->
+        <div id="dashboard-view" class="section-view active">
+            <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 32px; padding: 40px 20px; margin-bottom: 40px; text-align: center; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                    <div>
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663514551788/kCthg2DGRm6NuVQAqaMAg5/pasted_file_iFHJ7y_Logofundación_Mesadetrabajo1copia2_fba7c4ae.png" 
+                             alt="REDMEX" style="max-height: 200px; width: auto; filter: brightness(0) invert(1); object-fit: contain;">
+                    </div>
+                    <div style="width: 2px; height: 60px; background: rgba(255,255,255,0.3);"></div>
+                    <div>
+                        <img src="./NUEVO LOGO_Mesa de trabajo 1 copia 9 BLANCO}.png" 
+                             alt="IMPE" style="max-height: 200px; width: auto; filter: brightness(0) invert(1); object-fit: contain;">
+                    </div>
+                </div>
             </div>
-            <!-- Separador visual -->
-            <div style="width: 2px; height: 60px; background: rgba(255,255,255,0.3);"></div>
-            <!-- Logo IMPE (tipográfico elegante) -->
-            <div>
-                <img src="./NUEVO LOGO_Mesa de trabajo 1 copia 9 BLANCO}.png" 
-                     alt="IMPE" style="max-height: 200px; width: auto; filter: brightness(0) invert(1); object-fit: contain;">
+            <div class="dashboard-header">
+                <h1>Manual de Capacitación</h1>
+                <div class="date-badge" style="background:white; padding:10px 20px; border-radius:40px;">
+                    <i class="far fa-calendar-alt"></i> Abril 2026
+                </div>
+            </div>
+            <div class="module-grid">
+                <div class="module-card" onclick="switchView('intro')">
+                    <div class="card-icon"><i class="fas fa-door-open"></i></div>
+                    <h3>Introducción</h3>
+                    <p>Visión integral del programa de fortalecimiento.</p>
+                </div>
+                <div class="module-card" onclick="switchView('modulos')">
+                    <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Módulos de Capacitación</h3>
+                    <p>Los 7 módulos del programa.</p>
+                </div>
+                <div class="module-card" onclick="switchView('oferta')">
+                    <div class="card-icon"><i class="fas fa-tags"></i></div>
+                    <h3>Oferta Educativa</h3>
+                    <p>Programas y valores vigentes (completo).</p>
+                </div>
+                <div class="module-card" onclick="switchView('mapeo')">
+                    <div class="card-icon"><i class="fas fa-diagram-project"></i></div>
+                    <h3>Roles y Alcances</h3>
+                    <p>Mapeo operativo completo.</p>
+                </div>
+            </div>
+            <div style="background:white; border-radius:24px; padding:28px;">
+                <h3><i class="fas fa-chart-simple"></i> Métricas clave</h3>
+                <div class="metrics-group" style="margin-top:20px;">
+                    <div><strong>100%</strong><br>Participación</div>
+                    <div><strong>Alto</strong><br>Compromiso</div>
+                    <div><strong>Mejora</strong><br>Progresiva</div>
+                </div>
             </div>
         </div>
 
-    </div>
-
-    <div class="dashboard-header">
-        <h1>Manual de Capacitación</h1>
-        <div class="date-badge" style="background:white; padding:10px 20px; border-radius:40px;">
-            <i class="far fa-calendar-alt"></i> Abril 2026
-        </div>
-    </div>
-
-    <!-- Tarjetas de módulos (acceso rápido) -->
-    <div class="module-grid">
-        <div class="module-card" onclick="switchView('intro')">
-            <div class="card-icon"><i class="fas fa-door-open"></i></div>
-            <h3>Introducción</h3>
-            <p>Visión integral del programa de fortalecimiento.</p>
-        </div>
-        <div class="module-card" onclick="switchView('modulos')">
-            <div class="card-icon"><i class="fas fa-layer-group"></i></div>
-            <h3>Módulos de Capacitación</h3>
-            <p>Los 7 módulos del programa.</p>
-        </div>
-        <div class="module-card" onclick="switchView('oferta')">
-            <div class="card-icon"><i class="fas fa-tags"></i></div>
-            <h3>Oferta Educativa</h3>
-            <p>Programas y valores vigentes (completo).</p>
-        </div>
-        <div class="module-card" onclick="switchView('mapeo')">
-            <div class="card-icon"><i class="fas fa-diagram-project"></i></div>
-            <h3>Roles y Alcances</h3>
-            <p>Mapeo operativo completo.</p>
-        </div>
-    </div>
-
-    <!-- Métricas clave -->
-    <div style="background:white; border-radius:24px; padding:28px;">
-        <h3><i class="fas fa-chart-simple"></i> Métricas clave</h3>
-        <div class="metrics-group" style="margin-top:20px;">
-            <div><strong>100%</strong><br>Participación</div>
-            <div><strong>Alto</strong><br>Compromiso</div>
-            <div><strong>Mejora</strong><br>Progresiva</div>
-        </div>
-    </div>
-</div>
-        <!-- 1. INTRODUCCIÓN (incluye Metodología) -->
+        <!-- 1. INTRODUCCIÓN -->
         <div id="intro-view" class="section-view">
             <div class="content-card">
                 <h2><i class="fas fa-door-open"></i> 1. Introducción</h2>
@@ -916,7 +907,6 @@
                     equipos clave comprendan y comuniquen de manera coherente la identidad, valores y oferta educativa
                     de la Fundación.</p>
 
-                <!-- Datos Generales -->
                 <div id="datos-generales" style="scroll-margin-top: 80px;">
                     <h3 style="margin-top: 32px; margin-bottom: 16px;"><i class="fas fa-database"></i> Datos Generales del Programa</h3>
                     <table style="width:100%;">
@@ -943,7 +933,6 @@
                     </table>
                 </div>
 
-                <!-- Objetivo General -->
                 <div id="objetivo-general" style="scroll-margin-top: 80px;">
                     <h3 style="margin-top: 32px; margin-bottom: 16px;"><i class="fas fa-bullseye"></i> Objetivo General</h3>
                     <div style="background:#f8faff; padding:1.8rem; border-radius:20px; border-left:6px solid var(--accent-gold);">
@@ -951,7 +940,6 @@
                     </div>
                 </div>
 
-                <!-- Metodología de Trabajo (integrada) -->
                 <div style="margin-top: 40px;">
                     <h3><i class="fas fa-cogs"></i> Metodología de Trabajo</h3>
                     <div style="background:#eef3fa; border-radius:24px; padding:2rem; margin-top: 16px;">
@@ -975,7 +963,44 @@
             </div>
         </div>
 
-        <!-- MÓDULOS DE CAPACITACIÓN (reorganizados con duración y tabla de actividades) -->
+        <!-- 2. INFORMACIÓN INSTITUCIONAL (NUEVO) -->
+        <div id="info-view" class="section-view">
+            <div class="content-card">
+                <h2><i class="fas fa-building"></i> 2. Información Institucional</h2>
+                <div style="margin-bottom: 2rem;">
+                    <h3>¿Qué Somos?</h3>
+                    <p>Somos una Fundación comprometida con la educación y la profesionalización de las personas en México, reconociendo la importancia de la formación como una herramienta clave para transformar vidas. Trabajamos de la mano con instituciones educativas y aliados estratégicos para acercar oportunidades reales.</p>
+                </div>
+                <div style="margin-bottom: 2rem;">
+                    <h3>¿Quiénes Somos?</h3>
+                    <p>Somos una Fundación que pertenece a un grupo educativo designado por la Secretaría de Educación Pública Federal, cuya misión es impulsar la profesionalización de las personas en México, brindando oportunidades para que puedan concluir su formación académica.</p>
+                </div>
+                <div style="margin-bottom: 2rem;">
+                    <h3>Filosofía Institucional</h3>
+                    <div style="margin-left: 1rem;">
+                        <h4>Misión</h4>
+                        <p>Promover la educación y la profesionalización de las personas, formando individuos íntegros capaces de desarrollarse en los ámbitos personal, social y profesional, a través de oportunidades educativas, apoyos y programas que contribuyan a mejorar sus condiciones de vida.</p>
+                        <h4 style="margin-top: 1rem;">Visión</h4>
+                        <p>Ser una Fundación referente en la promoción de la educación y la profesionalización en México, impulsando oportunidades de aprendizaje que permitan a las personas desarrollar sus habilidades y asumir un papel activo en su entorno, contribuyendo a la transformación de su futuro.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3>Acuerdo 286</h3>
+                    <p>El Acuerdo 286 de la SEP es una disposición legal fundamental que respalda la operación institucional de la Fundación Red Educativa México. Este acuerdo reconoce el derecho de las personas a certificar sus conocimientos, sin importar si estos fueron adquiridos de forma autodidacta o a través de la experiencia laboral.</p>
+                    <div class="grid-responsive-3 compact" style="margin-top: 1rem;">
+                        <div style="background:#eafaf0; padding:1rem; border-radius:16px;"><strong>Publicación Original</strong><br>Emitido por la Secretaría de Educación Pública en el año 2000</div>
+                        <div style="background:#eef4ff; padding:1rem; border-radius:16px;"><strong>Objetivo Jurídico</strong><br>Establecer normas y criterios para revalidación, equivalencia y acreditación de conocimientos</div>
+                        <div style="background:#f5efff; padding:1rem; border-radius:16px;"><strong>Validez Nacional</strong><br>Plena validez oficial en toda la República Mexicana</div>
+                    </div>
+                    <div style="background:#eef2f7; padding:20px; border-radius:10px; margin-top: 1rem;">
+                        <h4>Alcance y Beneficios</h4>
+                        <p>Los documentos (certificados o títulos) emitidos bajo este acuerdo tienen plena validez oficial en toda la República Mexicana, permitiendo a los participantes continuar con estudios de posgrado o mejorar su perfil profesional de manera legal y reconocida. Esto representa una oportunidad transformadora para personas que buscan profesionalizarse sin necesidad de asistir a aulas tradicionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MÓDULOS DE CAPACITACIÓN -->
         <div id="modulos-view" class="section-view">
             <div class="content-card">
                 <h2><i class="fas fa-layer-group"></i> Módulos de Capacitación</h2>
@@ -987,8 +1012,7 @@
                     <div class="modulo-seccion"><h4>Objetivo</h4><p>Lograr una comprensión profunda de la identidad institucional, misión, visión y propósito, diferenciando claramente los roles de la Fundación, la Universidad IMPE y CONAIP, bajo el marco del Acuerdo 286 de la SEP.</p></div>
                     <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Historia, identidad, misión, visión y propósito de Fundación Red Educativa México.</li><li>Oferta educativa completa, programas académicos, becas y servicios.</li><li>Organigrama y líneas de comunicación.</li><li>Diferenciación de roles: Funciones específicas de Fundación Red Educativa México, Universidad IMPE y CONAIP (qué SÍ y qué NO hace cada uno).</li><li>Marco Legal: Acuerdo 286 de la SEP (qué es, alcance y validez).</li></ul></div>
                     <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
-                                            <p><strong>Duración total: 3 horas 30 minutos</strong></p>
-
+                        <p><strong>Duración total: 3 horas 30 minutos</strong></p>
                         <table class="actividades-tabla">
                             <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
                             <tbody>
@@ -1008,8 +1032,7 @@
                     <div class="modulo-seccion"><h4>Objetivo</h4><p>Desarrollar habilidades efectivas de presentación para interacciones institucionales y comerciales, enfocándose en la claridad, el profesionalismo y la comunicación persuasiva.</p></div>
                     <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Estructura de una presentación institucional efectiva.</li><li>Mensajes clave para diferentes audiencias (prospectos, socios, autoridades).</li><li>Manejo de objeciones iniciales y preguntas frecuentes.</li><li>Alineación con la marca y el mensaje de Fundación Red Educativa México.</li></ul></div>
                     <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
-                                            <p><strong>Duración total: 3 horas 30 minutos</strong></p>
-
+                        <p><strong>Duración total: 3 horas 30 minutos</strong></p>
                         <table class="actividades-tabla">
                             <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
                             <tbody>
@@ -1028,8 +1051,7 @@
                     <div class="modulo-seccion"><h4>Objetivo</h4><p>Dominar la entrega de presentaciones institucionales y comerciales en diversos formatos (en línea, presencial, telefónica), adaptando el estilo de comunicación y las herramientas de manera efectiva.</p></div>
                     <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Mejores prácticas para presentaciones en línea (uso de cámara, audio, compartir pantalla, interacción).</li><li>Técnicas para una entrega presencial atractiva y participativa.</li><li>Comunicación efectiva por teléfono.</li><li>Adaptación del mensaje y el lenguaje corporal a cada formato.</li></ul></div>
                     <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
-                                            <p><strong>Duración total: 5 horas</strong></p>
-
+                        <p><strong>Duración total: 5 horas</strong></p>
                         <table class="actividades-tabla">
                             <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
                             <tbody>
@@ -1049,8 +1071,7 @@
                     <div class="modulo-seccion"><h4>Objetivo</h4><p>Mejorar las habilidades para hablar en público, aumentando la claridad verbal, dominando las señales no verbales y regulando la voz para una comunicación impactante y persuasiva.</p></div>
                     <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Técnicas para eliminar muletillas y mejorar la articulación.</li><li>Lenguaje corporal (postura, gestos, contacto visual, expresión facial).</li><li>Modulación de la voz (tono, volumen, ritmo, pausas).</li><li>Manejo del miedo escénico.</li></ul></div>
                     <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
-                                            <p><strong>Duración total: 2 horas 30 minutos</strong></p>
-
+                        <p><strong>Duración total: 2 horas 30 minutos</strong></p>
                         <table class="actividades-tabla">
                             <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
                             <tbody>
@@ -1069,8 +1090,7 @@
                     <div class="modulo-seccion"><h4>Objetivo</h4><p>Desarrollar habilidades de redacción profesional para la comunicación digital, asegurando claridad, concisión y corrección gramatical y ortográfica.</p></div>
                     <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Principios de redacción clara y concisa.</li><li>Estructura y tono de correos electrónicos profesionales.</li><li>Mejores prácticas para WhatsApp.</li><li>Reglas básicas de ortografía y gramática.</li></ul></div>
                     <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
-                                            <p><strong>Duración total: 4 horas 30 minutos</strong></p>
-
+                        <p><strong>Duración total: 4 horas 30 minutos</strong></p>
                         <table class="actividades-tabla">
                             <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
                             <tbody>
@@ -1090,8 +1110,7 @@
                     <div class="modulo-seccion"><h4>Objetivo</h4><p>Equipar al equipo de Ventas y Enlace Institucional con técnicas avanzadas de negociación y cierre, enfocadas en la oferta educativa y la consecución de convenios.</p></div>
                     <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Ciclo de ventas aplicado al sector educativo.</li><li>Técnicas de sondeo y detección de necesidades.</li><li>Manejo avanzado de objeciones.</li><li>Estrategias de negociación y cierre efectivo.</li><li>Seguimiento post-cierre y fidelización.</li></ul></div>
                     <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
-                                            <p><strong>Duración total: 8 horas</strong></p>
-
+                        <p><strong>Duración total: 8 horas</strong></p>
                         <table class="actividades-tabla">
                             <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
                             <tbody>
@@ -1111,8 +1130,7 @@
                     <div class="modulo-seccion"><h4>Objetivo</h4><p>Capacitar al equipo en el uso eficiente y profesional de plataformas digitales para reuniones y presentaciones (Zoom, Google Meet, Microsoft Teams), desde la creación de invitaciones hasta la gestión de la sesión.</p></div>
                     <div class="modulo-seccion"><h4>Contenido Temático</h4><ul><li>Creación y envío de invitaciones profesionales.</li><li>Funcionalidades clave de Zoom, Meet y Teams.</li><li>Etiqueta y protocolo en reuniones virtuales.</li><li>Resolución de problemas técnicos comunes.</li><li>Configuración de seguridad y privacidad.</li></ul></div>
                     <div class="modulo-seccion"><h4>Actividades y Dinámicas</h4>
-                                            <p><strong>Duración total: 4 horas 30 minutos</strong></p>
-
+                        <p><strong>Duración total: 4 horas 30 minutos</strong></p>
                         <table class="actividades-tabla">
                             <thead><tr><th>Actividad/Dinámica</th><th>Duración</th><th>Recursos Necesarios</th></tr></thead>
                             <tbody>
@@ -1128,10 +1146,10 @@
             </div>
         </div>
 
-        <!-- 2. OFERTA EDUCATIVA -->
+        <!-- 3. OFERTA EDUCATIVA -->
         <div id="oferta-view" class="section-view">
             <div class="content-card">
-                <h2><i class="fas fa-graduation-cap"></i> 2. Oferta Educativa</h2>
+                <h2><i class="fas fa-graduation-cap"></i> 3. Oferta Educativa</h2>
                 <div class="oferta-grid">
                     <div class="edu-card"><div class="edu-header"><h3>Bachillerato General</h3><span>Modalidad: Virtual / Presencial / Híbrida</span></div><div class="edu-body"><p>Programa dirigido a personas mayores de 18 años que no han concluido su bachillerato, permitiéndoles obtener su certificado mediante un proceso de evaluación basado en sus conocimientos adquiridos.</p><strong>Áreas de evaluación:</strong><ul class="edu-list"><li>Comunicación</li><li>Matemáticas</li><li>Ciencias Sociales</li><li>Ciencias Experimentales</li><li>Humanidades</li></ul></div><div class="edu-footer"><strong>Perfil de ingreso:</strong> Mayores de 18 años, personas que no concluyeron el bachillerato.</div></div>
                     <div class="edu-card"><div class="edu-header"><h3>Titulación por Experiencia Laboral</h3><span>Acuerdo 286 | 100% Virtual o Híbrido</span></div><div class="edu-body"><p>Programa que permite obtener un título profesional con base en el Acuerdo 286, dirigido a personas con actividad laboral.</p><strong>Áreas disponibles:</strong><ul class="edu-list"><li>Ingeniería Industrial</li><li>Derecho</li><li>Contaduría</li><li>Educación Preescolar</li><li>Ingeniería Computacional</li><li>Ciencias de la Comunicación</li><li>Mercadotecnia</li><li>Ciencias Políticas y Administración Pública</li></ul></div><div class="edu-footer"><strong>Perfil de ingreso:</strong> Personas con experiencia laboral.</div></div>
@@ -1150,10 +1168,10 @@
             </div>
         </div>
 
-        <!-- 3. IDENTIDAD INSTITUCIONAL -->
+        <!-- 4. IDENTIDAD INSTITUCIONAL -->
         <div id="identidad-view" class="section-view">
             <div class="content-card">
-                <h2><i class="fas fa-handshake"></i> 3. Identidad Institucional</h2>
+                <h2><i class="fas fa-handshake"></i> 4. Identidad Institucional</h2>
                 <p style="margin-bottom:20px;">La estructura se sustenta en una alianza estratégica con roles específicos y complementarios:</p>
                 <div class="identity-container">
                     <div class="identity-card" style="border-color:#0a2540;"><h3>Fundación REDMEX</h3><p><strong>Enfoque:</strong> Social y educativo<br><strong>Función:</strong> Difusión, vinculación<br><strong>¿Qué SÍ hace?</strong> Promueve programas, genera alianzas, capta interesados.<br><strong>¿Qué NO hace?</strong> No imparte clases, no certifica, no evalúa.</p><div style="background:#fcf6e5; padding:10px; border-radius:8px; margin-top:15px;"><strong>Rol:</strong> Primer contacto / Área comercial</div></div>
@@ -1163,19 +1181,18 @@
             </div>
         </div>
 
-        <!-- 4. DEFINICIÓN DE ROLES Y ALCANCES -->
+        <!-- 5. DEFINICIÓN DE ROLES Y ALCANCES -->
         <div id="mapeo-view" class="section-view">
             <div class="content-card">
-                <h2><i class="fas fa-sitemap"></i> 4. Definición de roles y alcances operativos</h2>
+                <h2><i class="fas fa-sitemap"></i> 5. Definición de roles y alcances operativos</h2>
                 <div class="mapeo-container"><div class="mapeo-wrapper"><div class="mapeo-inner"><div class="flow-row"><div class="column"><div class="header h-blue">Difusión y Vinculación</div><div class="responsable-label">Responsable:</div><div class="responsable-val">Enlace institucional</div><div class="bubble-list"><div class="bubble b-blue">Difusión de programas</div><div class="bubble b-blue">Generación de prospectos</div><div class="bubble b-blue">Relaciones institucionales</div></div></div><div class="column"><div class="header h-green">Proceso Comercial (Ventas)</div><div class="responsable-label">Responsables:</div><div class="responsable-val">Lead Junior / Senior</div><div class="bubble-list"><div class="bubble b-green">Contacto inicial</div><div class="bubble b-green">Seguimiento y asesoría</div><div class="bubble b-green">Cierre de inscripción</div><div class="bubble b-green">Supervisión de KPIs</div><div class="bubble b-green">Atención a quejas iniciales</div></div></div><div class="column"><div class="header h-navy">Formación Académica</div><div class="responsable-label">Responsable:</div><div class="responsable-val">IMPE</div><div class="bubble-list"><div class="bubble b-navy">Impartición de clases</div><div class="bubble b-navy">Desarrollo de programas</div><div class="bubble b-navy">Seguimiento académico</div></div></div><div class="column"><div class="header h-purple">Evaluación y Certificación</div><div class="responsable-label">Responsable:</div><div class="responsable-val">CONAIP</div><div class="bubble-list"><div class="bubble b-purple">Evaluación de conocimientos</div><div class="bubble b-purple">Certificación (Acuerdo 286)</div><div class="bubble b-purple">Evaluación de competencias</div></div></div><div class="column"><div class="header h-red">Acompañamiento y Experiencia</div><div class="responsable-label">Responsable:</div><div class="responsable-val" style="font-size:10px;">Jefe de Operaciones, Team Leader Comercial...</div><div class="bubble-list"><div class="bubble b-red">Orientación inicial</div><div class="bubble b-red">Experiencia del alumno</div><div class="bubble b-red">Canalización de problemas</div></div></div></div><div class="scope-row"><div class="table-container"><div class="t-head bg-blue">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Promocionar, generar interés, convenios.</div><div class="t-body">Explicar a detalle, seguimiento, cerrar ventas.</div></div><div class="table-container"><div class="t-head bg-green">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Llamadas, explicar programas, cerrar inscripción...</div><div class="t-body">Cerrar casos complejos, validar estudios.</div></div><div class="table-container"><div class="t-head bg-navy">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Enseñar, diseñar planes, acompañar alumno.</div><div class="t-body">Certificar oficialmente, evaluar por Acuerdo 286.</div></div><div class="table-container"><div class="t-head bg-purple">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Aplicar exámenes, emitir dictamen, certificar.</div><div class="t-body">Dar clases, vender programas.</div></div><div class="table-container"><div class="t-head bg-red">Alcance</div><div class="t-head bg-light-gray">No Corresponde</div><div class="t-body">Canalizar correctamente, dirigir al área correcta.</div><div class="t-body">Resolver procesos completos, certificar.</div></div></div></div></div></div>
             </div>
         </div>
 
-        <!-- 5. ACTIVIDADES (con imagen 16:9) -->
+        <!-- 6. ACTIVIDADES -->
         <div id="actividades-view" class="section-view">
             <div class="content-card">
-                <h2><i class="fas fa-calendar-alt"></i> 5. Actividades Realizadas</h2>
-
+                <h2><i class="fas fa-calendar-alt"></i> 6. Actividades Realizadas</h2>
                 <div class="actividades-grid-extendida">
                     <div class="actividad-block"><h3><i class="fas fa-users"></i> Simulaciones tipo Role Play</h3><ul><li>Simulación de reunión en territorio (presentación institucional completa)</li><li>Cambio de roles (asesor / prospecto / enlace institucional)</li><li>Simulación de llamada inicial</li><li>Simulación de cierre de inscripción</li><li>Simulación de manejo de objeciones en vivo</li></ul></div>
                     <div class="actividad-block"><h3><i class="fas fa-brain"></i> Reformulación de información</h3><ul><li>Explicación del Acuerdo 286 con palabras propias</li><li>Cambio de fichas informativas (explicar lo mismo con diferente lenguaje)</li><li>Traducción de lenguaje técnico a lenguaje sencillo</li><li>Ejercicio “explícaselo a alguien sin estudios”</li><li>Reformulación por tipo de perfil (prospecto vs enlace)</li></ul></div>
@@ -1189,10 +1206,10 @@
             </div>
         </div>
 
-        <!-- 6. HABILIDADES -->
+        <!-- 7. HABILIDADES -->
         <div id="habilidades-view" class="section-view">
             <div class="content-card">
-                <h2><i class="fas fa-chart-line"></i> 6. Desarrollo de Habilidades</h2>
+                <h2><i class="fas fa-chart-line"></i> 7. Desarrollo de Habilidades</h2>
                 <div class="grid-responsive-2">
                     <div style="background:#f8faff; padding:1.5rem; border-radius:20px;"><strong>Comunicación</strong><br><span style="color:#c62828;">✗ Discurso poco estructurado</span><br><span style="color:#2e7d32;">✓ Discurso claro, ordenado y adaptable</span></div>
                     <div style="background:#f8faff; padding:1.5rem; border-radius:20px;"><strong>Seguridad</strong><br><span style="color:#c62828;">✗ Nerviosismo y dudas</span><br><span style="color:#2e7d32;">✓ Mayor seguridad y fluidez</span></div>
@@ -1202,10 +1219,10 @@
             </div>
         </div>
 
-        <!-- 7. EVALUACIÓN -->
+        <!-- 8. EVALUACIÓN -->
         <div id="evaluacion-view" class="section-view">
             <div class="content-card">
-                <h2><i class="fas fa-clipboard-list"></i> 7. Evaluación y Resultados</h2>
+                <h2><i class="fas fa-clipboard-list"></i> 8. Evaluación y Resultados</h2>
                 <p>Para asegurar la correcta aplicación de conocimientos, se establece un modelo enfocado en la medición del desempeño y la consolidación del discurso institucional en escenarios reales.</p>
                 <h3>Criterios de Evaluación</h3>
                 <div class="grid-responsive-3">
@@ -1218,13 +1235,20 @@
             </div>
         </div>
 
-        <!-- 8. SEGUIMIENTO -->
+        <!-- 9. SEGUIMIENTO -->
         <div id="seguimiento-view" class="section-view">
             <div class="content-card">
-                <h2><i class="fas fa-arrows-spin"></i> 8. Seguimientos y Próximas Etapas</h2>
+                <h2><i class="fas fa-arrows-spin"></i> 9. Seguimientos y Próximas Etapas</h2>
                 <p>El seguimiento se realiza mediante actividades integradas a la operación diaria para evaluar el desempeño en tiempo real.</p>
                 <h3>Acceso a Recursos por Área</h3>
-                <div class="drive-buttons"><button class="drive-btn" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px;"><i class="fas fa-folder"></i> Área de Enlace - Drive</button><button class="drive-btn" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px;"><i class="fas fa-folder"></i> Área Comercial - Drive</button></div>
+<div class="drive-buttons">
+    <a href="https://drive.google.com/drive/folders/164J7kmFlbfh8Z0hB97kBCCkoqyOGdEB9?usp=sharing" target="_blank" rel="noopener noreferrer" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px; text-decoration:none; display:inline-flex; align-items:center; gap:10px;">
+        <i class="fas fa-folder"></i> Área Comercial - Drive
+    </a>
+    <a href="https://drive.google.com/drive/folders/1lbSi8EP02rreq2PRPOgHJl5qqCTABv0m?usp=sharing" target="_blank" rel="noopener noreferrer" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px; text-decoration:none; display:inline-flex; align-items:center; gap:10px;">
+        <i class="fas fa-folder"></i> Área de Enlace - Drive
+    </a>
+</div></button></div>
                 <p style="color:#64748b;">⚠️ Los enlaces a Drive serán agregados próximamente.</p>
                 <h3>Estrategia de Seguimiento Operativo</h3>
                 <div class="grid-responsive-2"><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Eliminación de muletillas:</strong> Sesiones breves.</div><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Simulaciones en piso:</strong> Role-play real.</div><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Resolución en tiempo real:</strong> Soporte operativo.</div><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Práctica supervisada:</strong> Refuerzo continuo.</div></div>
@@ -1234,10 +1258,10 @@
             </div>
         </div>
 
-        <!-- 9. ANEXOS -->
+        <!-- 10. ANEXOS -->
         <div id="anexos-view" class="section-view">
             <div class="content-card">
-                <h2><i class="fas fa-paperclip"></i> 9. Anexos</h2>
+                <h2><i class="fas fa-paperclip"></i> 10. Anexos</h2>
                 <p>El programa se apoyó en la creación y adaptación de recursos didácticos diseñados específicamente para facilitar la comprensión, práctica y dominio del modelo de trabajo institucional.</p>
                 <div style="margin-top:20px;"><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Fichas Técnicas Institucionales</strong> - Documentos estructurados con información clave.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Mapeos Institucionales</strong> - Ejercicios de investigación y análisis.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Guía de Apoyo (Cuadro Comparativo)</strong> - Diferencias entre REDMEX, IMPE y CONAIP.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Ejercicios Prácticos</strong> - Actividades para reforzar misión, visión y oferta.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Simulaciones y Casos</strong> - Escenarios basados en situaciones reales.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Material Audiovisual</strong> - Videos de técnicas de comunicación y negociación.</div><div style="background:#f8fafc; padding:1.2rem 1.8rem; border-radius:50px; margin-bottom:12px;"><strong>Evaluaciones</strong> - Formularios físicos y digitales de seguimiento.</div><a href="https://drive.google.com/drive/folders/1B4PA8IWkpJohfNbewXMzWEQX6JuD6mvY?usp=drive_link" target="_blank" style="display:block; background:#eef3ff; padding:1.2rem 1.8rem; border-radius:50px; text-decoration:none; color:inherit; border:1px solid var(--primary);"><i class="fas fa-folder-open"></i> <strong>Repositorio Digital</strong> - Carpeta compartida con acceso continuo a materiales. <span style="font-weight:bold; text-decoration:underline;">Click para abrir Google Drive</span></a></div>
             </div>
