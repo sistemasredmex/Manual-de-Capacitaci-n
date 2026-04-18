@@ -242,6 +242,7 @@
             font-weight: 600;
             transition: background 0.2s;
         }
+
         .subsection-header:hover {
             background: #e2e8f0;
         }
@@ -263,9 +264,11 @@
             margin-top: 1.8rem;
             margin-bottom: 1.8rem;
         }
+
         .modulo-seccion:first-of-type {
             margin-top: 0;
         }
+
         .modulo-seccion h4 {
             font-size: 1.1rem;
             font-weight: 600;
@@ -274,20 +277,25 @@
             padding-left: 12px;
             margin-bottom: 0.75rem;
         }
-        .modulo-seccion p, .modulo-seccion ul {
+
+        .modulo-seccion p,
+        .modulo-seccion ul {
             margin-left: 1rem;
             color: #334155;
             line-height: 1.5;
         }
+
         .modulo-seccion ul {
             list-style: none;
             padding-left: 0;
         }
+
         .modulo-seccion li {
             padding-left: 1.5rem;
             position: relative;
             margin-bottom: 0.4rem;
         }
+
         .modulo-seccion li::before {
             content: "•";
             color: var(--primary);
@@ -295,6 +303,7 @@
             position: absolute;
             left: 0.25rem;
         }
+
         .modulo-seccion strong {
             color: #0f172a;
         }
@@ -306,17 +315,20 @@
             margin: 1rem 0;
             font-size: 0.9rem;
         }
+
         .actividades-tabla th {
             background: var(--deep-blue);
             color: white;
             padding: 10px 12px;
             text-align: left;
         }
+
         .actividades-tabla td {
             padding: 10px 12px;
             border-bottom: 1px solid #e2e8f0;
             vertical-align: top;
         }
+
         .actividades-tabla tr:last-child td {
             border-bottom: none;
         }
@@ -327,6 +339,7 @@
             justify-content: center;
             margin-bottom: 28px;
         }
+
         .actividades-imagen img {
             max-width: 400px;
             width: 100%;
@@ -434,11 +447,48 @@
             border-left: 6px solid #b23b3b;
         }
 
+        /* === SECCIÓN 5: DEFINICIÓN DE ROLES - VERSIÓN RESPONSIVA MEJORADA === */
         .scope-row {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
+            gap: 16px;
             margin-top: 20px;
+        }
+
+        /* Pantallas medianas (entre 900px y 1199px) -> 3 columnas */
+        @media (max-width: 1199px) and (min-width: 901px) {
+            .scope-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Pantallas pequeñas (menos de 900px) -> 1 columna y contenido apilado */
+        @media (max-width: 900px) {
+            .scope-row {
+                grid-template-columns: 1fr;
+            }
+
+            .table-container {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .table-container .t-head,
+            .table-container .t-body {
+                display: block;
+                width: 100%;
+                text-align: left;
+                padding: 12px;
+            }
+
+            .table-container .t-head {
+                font-size: 1rem;
+            }
+
+            .table-container .t-body {
+                border-top: 1px solid #ddd;
+            }
         }
 
         .table-container {
@@ -447,7 +497,13 @@
             border: 1px solid #ddd;
             border-radius: 12px;
             overflow: hidden;
-            font-size: 12px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 1199px) {
+            .table-container {
+                font-size: 0.75rem;
+            }
         }
 
         .t-head {
@@ -786,12 +842,16 @@
             }
         }
 
-        /* Footer */
+        /* Footer corregido: sin solapamientos */
         .app-footer {
             margin-top: 40px;
             text-align: center;
             color: #64748b;
+            clear: both;
+            width: 100%;
+            padding-bottom: 20px;
         }
+
         .logo-medio {
             display: flex;
             align-items: center;
@@ -801,7 +861,7 @@
             flex-wrap: wrap;
         }
 
-        .logo-medio  img {
+        .logo-medio img {
             max-height: 200px;
             max-width: 100%;
             width: auto;
@@ -910,26 +970,11 @@
                 <div id="datos-generales" style="scroll-margin-top: 80px;">
                     <h3 style="margin-top: 32px; margin-bottom: 16px;"><i class="fas fa-database"></i> Datos Generales del Programa</h3>
                     <table style="width:100%;">
-                        <tr>
-                            <td style="font-weight:bold;">Nombre de la Capacitación</td>
-                            <td>Programa de Fortalecimiento Institucional</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight:bold;">Institución</td>
-                            <td>Fundación Red Educativa México</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight:bold;">Fecha de Inicio</td>
-                            <td>30 de marzo, 2026</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight:bold;">Áreas Participantes</td>
-                            <td>Enlace Institucional, Área comercial (Lead senior, Lead Junior), Marketing, RH</td>
-                        </tr>
-                        <tr>
-                            <td style="font-weight:bold;">Responsable</td>
-                            <td>Coordinador de Capacitación</td>
-                        </tr>
+                        <tr><td style="font-weight:bold;">Nombre de la Capacitación</td><td>Programa de Fortalecimiento Institucional</td></tr>
+                        <tr><td style="font-weight:bold;">Institución</td><td>Fundación Red Educativa México</td></tr>
+                        <tr><td style="font-weight:bold;">Fecha de Inicio</td><td>30 de marzo, 2026</td></tr>
+                        <tr><td style="font-weight:bold;">Áreas Participantes</td><td>Enlace Institucional, Área comercial (Lead senior, Lead Junior), Marketing, RH</td></tr>
+                        <tr><td style="font-weight:bold;">Responsable</td><td>Coordinador de Capacitación</td></tr>
                     </table>
                 </div>
 
@@ -963,7 +1008,7 @@
             </div>
         </div>
 
-        <!-- 2. INFORMACIÓN INSTITUCIONAL (NUEVO) -->
+        <!-- 2. INFORMACIÓN INSTITUCIONAL -->
         <div id="info-view" class="section-view">
             <div class="content-card">
                 <h2><i class="fas fa-building"></i> 2. Información Institucional</h2>
@@ -1235,20 +1280,20 @@
             </div>
         </div>
 
-        <!-- 9. SEGUIMIENTO -->
+        <!-- 9. SEGUIMIENTO (código corregido: se eliminaron etiquetas extra) -->
         <div id="seguimiento-view" class="section-view">
             <div class="content-card">
                 <h2><i class="fas fa-arrows-spin"></i> 9. Seguimientos y Próximas Etapas</h2>
                 <p>El seguimiento se realiza mediante actividades integradas a la operación diaria para evaluar el desempeño en tiempo real.</p>
                 <h3>Acceso a Recursos por Área</h3>
-<div class="drive-buttons">
-    <a href="https://drive.google.com/drive/folders/164J7kmFlbfh8Z0hB97kBCCkoqyOGdEB9?usp=sharing" target="_blank" rel="noopener noreferrer" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px; text-decoration:none; display:inline-flex; align-items:center; gap:10px;">
-        <i class="fas fa-folder"></i> Área Comercial - Drive
-    </a>
-    <a href="https://drive.google.com/drive/folders/1lbSi8EP02rreq2PRPOgHJl5qqCTABv0m?usp=sharing" target="_blank" rel="noopener noreferrer" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px; text-decoration:none; display:inline-flex; align-items:center; gap:10px;">
-        <i class="fas fa-folder"></i> Área de Enlace - Drive
-    </a>
-</div></button></div>
+                <div class="drive-buttons">
+                    <a href="https://drive.google.com/drive/folders/164J7kmFlbfh8Z0hB97kBCCkoqyOGdEB9?usp=sharing" target="_blank" rel="noopener noreferrer" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px; text-decoration:none; display:inline-flex; align-items:center; gap:10px;">
+                        <i class="fas fa-folder"></i> Área Comercial - Drive
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1lbSi8EP02rreq2PRPOgHJl5qqCTABv0m?usp=sharing" target="_blank" rel="noopener noreferrer" style="background:var(--deep-blue); color:white; border:none; padding:12px 24px; border-radius:40px; text-decoration:none; display:inline-flex; align-items:center; gap:10px;">
+                        <i class="fas fa-folder"></i> Área de Enlace - Drive
+                    </a>
+                </div>
                 <p style="color:#64748b;">⚠️ Los enlaces a Drive serán agregados próximamente.</p>
                 <h3>Estrategia de Seguimiento Operativo</h3>
                 <div class="grid-responsive-2"><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Eliminación de muletillas:</strong> Sesiones breves.</div><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Simulaciones en piso:</strong> Role-play real.</div><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Resolución en tiempo real:</strong> Soporte operativo.</div><div style="background:var(--deep-blue); color:white; padding:15px; border-radius:12px;"><strong>Práctica supervisada:</strong> Refuerzo continuo.</div></div>
